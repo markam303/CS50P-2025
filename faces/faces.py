@@ -1,6 +1,5 @@
 input = input("Input: ")
 
-input.replace(":)", "🙂")
-input.replace(":(", "🙁")
+input = input.replace(":)", "🙂").replace(":(", "🙁")
 
 print(input)
