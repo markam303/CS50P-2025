@@ -1,3 +1,4 @@
 m = int(input("m: "))
 
-E = 
+
+E = mc
