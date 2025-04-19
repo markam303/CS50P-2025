@@ -7,11 +7,13 @@ def main():
 
 def dollars_to_float(d):
     dollars_stripped_to_numbers = d.strip("$")
+    print(float(dollars_stripped_to_numbers))
     return float(dollars_stripped_to_numbers)
 
 
 def percent_to_float(p):
     percents_stripped_to_numbers = p.strip("%")
+    print(float(percents_stripped_to_numbers))
     return float(percents_stripped_to_numbers)
 
 
