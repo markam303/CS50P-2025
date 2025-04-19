@@ -1,4 +1,5 @@
 m = int(input("m: "))
 
-
-E = mc
+c = 300000000
+E = mcc
+print(f"E: {E}", E = mcc)
