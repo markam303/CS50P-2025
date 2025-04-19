@@ -1,5 +1,5 @@
 input = input("")
 
-input.replace(" ", "...")
+print(input.replace(" ", "..."))
      
 
