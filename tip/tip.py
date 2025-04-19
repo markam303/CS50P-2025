@@ -12,9 +12,9 @@ def dollars_to_float(d):
 
 
 def percent_to_float(p):
-    percents_stripped_to_numbers = p.strip("%") / 100
-    print(float(percents_stripped_to_numbers))
-    return float(percents_stripped_to_numbers)
+    percents_stripped_to_numbers = p.strip("%")
+    print(float(percents_stripped_to_numbers) / 100)
+    return float(percents_stripped_to_numbers) / 100
 
 
 main()
