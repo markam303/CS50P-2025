@@ -14,6 +14,5 @@ def percent_to_float(p):
     percents_stripped_to_numbers = p.strip("%")
     return float(percents_stripped_to_numbers)
 
-    
 
 main()
