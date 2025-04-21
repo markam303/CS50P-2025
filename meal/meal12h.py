@@ -7,14 +7,15 @@ def main():
     
     time = convert(time)
     
-    if time >= 7.00 and time <= 8.00:
-        print("breakfast time")
-    elif time >= 12.00 and time <= 13.00:
-        print("lunch time")
-    elif time >= 18.00 and time <= 19.00:
-        print("dinner time")
-    else:
-        pass
+    if am_pm == "a.m" or am_pm == "A.M.":
+        if time >= 7.00 and time <= 8.00:
+            print("breakfast time")
+        elif time >= 12.00 and time <= 13.00:
+            print("lunch time")
+        elif time >= 18.00 and time <= 19.00:
+            print("dinner time")
+        else:
+            pass
     
 def convert(time):
     hour, min = time.split(":")
