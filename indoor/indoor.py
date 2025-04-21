@@ -1,4 +1,4 @@
-# Get user's input
-question = str(input(""))
+
+question = input("")
 lowercase = question.lower()
 print(lowercase)
