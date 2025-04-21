@@ -12,7 +12,7 @@ def main():
     elif time >= 18.00 and time <= 19.00:
         print("dinner time")
     else:
-        pass
+        return 0
     
 def convert(time):
     hour, min = time.split(":")
