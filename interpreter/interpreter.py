@@ -3,15 +3,15 @@
 expression = input("Expression: ").strip()
 
 x, y, z = expression.split(" ")
-x = int(x)
-z = int(z)
+x = float(x)
+z = float(z)
 match y:
     case "+":
-        print(round(x + z, 1))    
+        print(round(x + z))    
     case "-":
-        print(round(x - z, 1)) 
+        print(round(x - z)) 
     case "*":
-        print(round(x * z, 1))   
+        print(round(x * z))   
     case "/":
-        print(round(x / z, 1))     
+        print(round(x / z))     
         
