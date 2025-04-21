@@ -15,8 +15,8 @@ def main():
         else:
             return 0
     elif am_pm == "p.m." or am_pm == "P.M.":
-        if time >= 6.00 and time <= 7:00
-        print("dinner time")
+        if time >= 6.00 and time <= 7.00:
+            print("dinner time")
 
     
 def convert(time):
