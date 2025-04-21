@@ -7,11 +7,11 @@ x = float(x)
 z = float(z)
 match y:
     case "+":
-        print(round(x + z))    
+        print(round(x + z, 1))    
     case "-":
-        print(round(x - z)) 
+        print(round(x - z, 1)) 
     case "*":
-        print(round(x * z))   
+        print(round(x * z, 1))   
     case "/":
-        print(round(x / z))     
+        print(round(x / z, 1))     
         
