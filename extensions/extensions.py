@@ -1,4 +1,4 @@
-### Output filetype after user types in filename ###
+### Output filetype after user types-in filename ###
 
 filename = input("File name: ").lower().strip()
 
