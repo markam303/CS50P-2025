@@ -3,7 +3,7 @@
 def main():
     time = input("What time is it? ").strip()
     
-    convert(time)
+    time = convert(time)
     
     if time > 7 and time < 8:
         print("breakfast time")
