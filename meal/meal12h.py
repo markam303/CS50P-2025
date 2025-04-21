@@ -7,7 +7,7 @@ def main():
     
     time = convert(time)
     
-    if am_pm == "a.m" or am_pm == "A.M.":
+    if am_pm == "a.m." or am_pm == "A.M.":
         if time >= 7.00 and time <= 8.00:
             print("breakfast time")
         elif time >= 12.00:
