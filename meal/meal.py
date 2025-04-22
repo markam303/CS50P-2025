@@ -9,23 +9,23 @@ def main():
         time = convert(time)
         
         if am_pm == "a.m." or am_pm == "A.M.":
-            if 7.00 <= time <= 8.00:
+            if 7.00 <= time < 8.00:
                 print("breakfast time")
             elif time >= 12.00:
                 print("lunch time")
             else:
                 return 0
         elif am_pm == "p.m." or am_pm == "P.M.":
-            if 6.00 <= time <= 7.00:
+            if 6.00 <= time < 7.00:
                 print("dinner time")
     except ValueError:
         time = convert(time)
     
-        if 7.00 <= time <= 8.00:
+        if 7.00 <= time < 8.00:
             print("breakfast time")
-        elif 12.00 <= time <= 13.00:
+        elif 12.00 <= time < 13.00:
             print("lunch time")
-        elif 18.00 <= time <= 19.00:
+        elif 18.00 <= time < 19.00:
             print("dinner time")
         else:
             return 0
