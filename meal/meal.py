@@ -29,6 +29,8 @@ def main():
             print("dinner time")
         else:
             return 0
+    except ValueError:
+        print("Wrong time format.")
         
 
     
