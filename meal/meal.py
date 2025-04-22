@@ -43,6 +43,7 @@ def convert(time):
         return float(hour + min)
     except ValueError:
         print("Wrong time format.")
+        return 0
       
     
 
