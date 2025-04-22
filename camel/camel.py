@@ -5,7 +5,7 @@ def main():
     
     for i in camel:
         if i.isupper():
-            i = i.replace(i, "_" + i.lower())
-            print(camel)    
+            snake_case = i.replace(i, "_" + i.lower())
+            print(snake_case)    
 
 main()
