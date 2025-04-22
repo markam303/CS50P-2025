@@ -7,9 +7,10 @@ def main():
         print(f"Amount Due: {amount_due}")
         insert = get_coin()
         amount_due = calc_amount_due(amount_due, insert)
-    if amount_due == 0:
-        print("Change Owed: 0")
-    e
+    if amount_due <= 0:
+        change = amount_due * -1
+        print(f"Change Owed: {change}")
+
 
         
 
