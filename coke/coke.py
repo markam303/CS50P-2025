@@ -18,9 +18,8 @@ def get_coin():
             return insert
         
 
-
 def calc_amount_due(insert):
-    return amount_due - insert
+    return (amount_due - insert)
     
 
 
