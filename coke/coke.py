@@ -15,6 +15,8 @@ def get_coin():
     insert = int(input("Insert Coin: "))
     if insert in coins:
         return insert
+    else:
+        return 0
         
 
 def calc_amount_due(amount_due, insert):
