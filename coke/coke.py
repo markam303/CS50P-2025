@@ -12,10 +12,9 @@ def main():
         
 
 def get_coin():
-    while True:
-        insert = int(input("Insert Coin: "))
-        if insert in coins:
-            return insert
+    insert = int(input("Insert Coin: "))
+    if insert in coins:
+        return insert
         
 
 def calc_amount_due(amount_due, insert):
