@@ -30,10 +30,7 @@ def main():
         else:
             return 0
 
-
-        
-
-    
+# Function to convert time to float format like 1:30 to 1.5       
 def convert(time):
     try:
         hour, min = time.split(":")
@@ -46,6 +43,5 @@ def convert(time):
         return 0
       
     
-
 if __name__ == "__main__":
     main()
