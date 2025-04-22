@@ -5,9 +5,7 @@ def main():
     
     for i in camel:
         if i.isupper():
-            camel.split(i)
-            
-            
-    
+            i = i.replace(i, "_" + i.lower())
+            print(camel)    
 
 main()
