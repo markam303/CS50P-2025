@@ -7,5 +7,7 @@ def main():
         if i.isupper():
             snake_case = camel.replace(i, "_" + i.lower())    
             print(f"snake_case: {snake_case}")   
+    
+    print(f"snake_case: {camel}")
 
 main()
