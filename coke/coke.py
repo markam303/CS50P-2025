@@ -4,6 +4,7 @@ def main():
     cola = 50
     coins = [25, 10, 5]
     print(f"Amount Due: {amount_due}")
+    insert = int(input("Insert Coin: "))
 
 
 
