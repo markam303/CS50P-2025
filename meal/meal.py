@@ -29,17 +29,20 @@ def main():
             print("dinner time")
         else:
             return 0
-    except ValueError:
-        print("Wrong time format.")
+
+
         
 
     
 def convert(time):
-    hour, min = time.split(":")
-    hour = float(hour)
-    min = float(min)
-    min = min / 60
-    return float(hour + min)
+    try:
+        hour, min = time.split(":")
+        hour = float(hour)
+        min = float(min)
+        min = min / 60
+        return float(hour + min)
+    except ValueError:
+        print("Wrong time format.")        
     
 
 if __name__ == "__main__":
