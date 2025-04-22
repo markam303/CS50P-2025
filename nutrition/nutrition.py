@@ -25,7 +25,7 @@ def main():
     ]
     
     item = input("Item: ").lower()
-    if item in fruits:
+    if item == fruits[fruit]:
         for fruit in fruits:
             print(fruit["calories"])
     
