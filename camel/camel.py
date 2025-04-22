@@ -3,13 +3,15 @@
 def main():
     camel = input("camelCase: ")
     
+    snake = snake_case(camel)
+    
+    print(f"snake_case: {snake}")
+
+def snake_case(camel):
     for i in camel:
         if i.isupper():
-            snake_case = camel.replace(i, "_" + i.lower())
-            return snake_case    
-        print(f"snake_case: {snake_case}") 
-        return 0  
-    
-    print(f"snake_case: {camel}")
+            camel = camel.replace(i, "_" + i.lower())  
+    return camel
+
 
 main()
