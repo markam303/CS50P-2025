@@ -42,6 +42,8 @@ def convert(time):
         min = min / 60
         return float(hour + min)
     except ValueError:
+        print("Wrong time format.")
+    except TypeError:
         print("Wrong time format.")        
     
 
