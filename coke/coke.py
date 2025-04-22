@@ -3,7 +3,7 @@
 def main():
     cola = 50
     coins = [25, 10, 5]
-    print(amount_due)
+    print(f"Amount Due: {amount_due}")
 
 
 
