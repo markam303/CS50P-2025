@@ -8,7 +8,8 @@ def main():
 def remove(text):
     vowels = ["A", "E", "I", "O", "U", "a", "e", "i", "o", "u"]
     for i in vowels:
-        text.replace(i, "")
+        text = text.replace(i, "")
+    return text
 
 
 main()
