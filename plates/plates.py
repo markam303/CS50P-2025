@@ -17,7 +17,8 @@ def is_valid(plate):
 
 # Check if first 2 chars are letters
 def check_2_first_letters(plate):
-    if plate.slice[0:2].isalpha():
+    twofirst = plate.slice[0:2]
+    if twofirst.isalpha():
         return 0
     else:
         return 1
