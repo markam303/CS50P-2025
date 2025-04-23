@@ -40,7 +40,6 @@ def check_numbers(plate):
         elif plate[-1].isalpha():
             return 4
  
-            return 4
         else:
             return 0
        
