@@ -10,10 +10,14 @@ def main():
 
 # Check plates are valid
 def is_valid(plate):
-    check_2_first_letters(plate)
-    check_lenght(plate)
-    check_numbers(plate)
-    check_marks(plate)
+    if not check_2_first_letters(plate):
+        return False
+    if not check_lenght(plate):
+        return False
+    if not check_numbers(plate):
+        return False
+    if not check_marks(plate):
+        return False
     return True
 
 # Check if first 2 chars are letters
