@@ -39,7 +39,6 @@ def check_numbers(plate):
                 continue
         elif plate[-1].isalpha():
             return 4
- 
         else:
             return 0
        
@@ -50,7 +49,6 @@ def check_marks(plate):
         return 0
     else:
         return 5
-
 
 
 main()
