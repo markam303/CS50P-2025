@@ -21,7 +21,10 @@ def check_lenght():
 
 # Check if first 2 chars are letters
 def check_2_first_letters(plate):
-    ...
+    if plate.slice[0:2].isalpha():
+        return 0
+    else:
+        return 1
 
 # Check numbers, last character must be numbers and first number cannot be 0
 def check_numbers(plate):
