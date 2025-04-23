@@ -34,7 +34,7 @@ def check_lenght(plate):
     else:
         return 2
 
-# Check numbers, last character must be numbers and first number cannot be 0
+# Check numbers, first number cannot be 0
 def check_numbers(plate):
     for i in range(len(plate)):
         char = plate[i]
