@@ -37,13 +37,19 @@ def check_numbers(plate):
                 return 3
             else:
                 continue
-        i
-    
-            
+        elif i == "\0":
+            if (i - 1).isalpha():
+                return 4
+        else:
+            return 0
+       
 
 # Check for periods, spaces, punctuations - not allowed
 def check_marks(plate):
-    ...
+    if plate.isalnum():
+        return 0
+    else:
+        return 5
 
 
 
