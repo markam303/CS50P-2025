@@ -37,10 +37,10 @@ def check_numbers(plate):
                 return 3
             else:
                 continue
-        elif plate[-1].isalpha():
-            return 4
-        else:
-            return 0
+    if plate[-1].isalpha():
+        return 4
+    else:
+        return 0
        
 
 # Check for periods, spaces, punctuations - not allowed
