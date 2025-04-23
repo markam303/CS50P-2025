@@ -14,7 +14,7 @@ def is_valid(plate):
     check_lenght(plate)
     check_numbers(plate)
     check_marks(plate)
-    return 0
+    return True
 
 # Check if first 2 chars are letters
 def check_2_first_letters(plate):
