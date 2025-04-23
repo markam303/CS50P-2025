@@ -15,16 +15,19 @@ def is_valid(plate):
     check_numbers(plate)
     check_marks(plate)
 
-# Check for lenght, if between 2-6 characters        
-def check_lenght():
-    ...
-
 # Check if first 2 chars are letters
 def check_2_first_letters(plate):
     if plate.slice[0:2].isalpha():
         return 0
     else:
         return 1
+
+# Check for lenght, if between 2-6 characters included        
+def check_lenght(plate):
+    if 2 <= len(plate) <= 6:
+        return 0
+    else:
+        return 2
 
 # Check numbers, last character must be numbers and first number cannot be 0
 def check_numbers(plate):
