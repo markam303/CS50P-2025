@@ -50,7 +50,7 @@ def check_numbers(plate):
                 else:
                     continue
             except IndexError:
-                return 0
+                continue
     else:
         return 0
        
