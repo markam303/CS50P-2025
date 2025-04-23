@@ -44,10 +44,13 @@ def check_numbers(plate):
                     return 3
                 else:
                     continue
-            if plate[i + 1].isalpha():
-                return 4
-            else:
-                continue
+            try:    
+                if plate[i + 1].isalpha():
+                    return 4
+                else:
+                    continue
+            except IndexError:
+                return 0
     else:
         return 0
        
