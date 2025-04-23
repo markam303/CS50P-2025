@@ -33,7 +33,7 @@ def check_lenght(plate):
 # Check numbers, last character must be numbers and first number cannot be 0
 def check_numbers(plate):
     for i in plate:
-        if i.isdigit() and (i - 1).isalpha():
+        if i.isdigit():
             if i == 0:
                 return 3
             else:
