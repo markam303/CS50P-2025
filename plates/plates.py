@@ -37,9 +37,10 @@ def check_numbers(plate):
                 return 3
             else:
                 continue
-        elif i == "\0":
-            if (i - 1).isalpha():
-                return 4
+        elif plate[-1].isalpha():
+            return 4
+ 
+            return 4
         else:
             return 0
        
