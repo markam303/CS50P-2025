@@ -1,5 +1,6 @@
 ### As per FDA's poster for fruits, display calories of each fruit ###
 
+
 def main():
     fruits = [
         {"fruit":"apple", "calories":"130"},
