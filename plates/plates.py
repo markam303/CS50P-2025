@@ -10,7 +10,8 @@ def main():
 
 
 def is_valid(plate):
-    check_2_first(plate)
+    chech_length(plate)
+    check_2_first_letters(plate)
     check_last(plate)
         
 
