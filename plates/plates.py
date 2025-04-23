@@ -38,15 +38,16 @@ def check_lenght(plate):
 def check_numbers(plate):
     for i in range(len(plate)):
         char = plate[i]
-        if char.isdigit() and plate[i - 1].isalpha():
-            if char == "0":
-                return 3
-            else:
-                continue
-    if plate[-1].isalpha():
-        return 4
-    else:
-        return 0
+        if char.isdigit():
+            if plate[i - 1].isalpha():
+                if char == "0":
+                    return 3
+                else:
+                    continue
+        if plate[-1].isalpha():
+            return 4
+        else:
+            return 0
        
 
 # Check for periods, spaces, punctuations - not allowed
