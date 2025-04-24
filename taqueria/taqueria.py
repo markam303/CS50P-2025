@@ -19,9 +19,9 @@ def main():
             for item in menu:
                 item = input("Item: ").title()
                 price = menu.get(item)
-                total += price
+                if price != None:
+                    total += price
                 print(f"Total: ${total}")
-                print(f"${price}")
 
         except EOFError:
             print()
