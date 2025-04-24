@@ -12,10 +12,8 @@ def get_fraction(text):
         try:
             numerator, denominator = input(text).split("/")
             numerator = int(numerator)
-            denominator = int(denominator)  
-        except (numerator, denominator == 0):
-            pass        
-        except (ValueError, ZeroDivisionError):
+            denominator = int(denominator)   
+        except (ValueError):
             pass
         else:
             break
