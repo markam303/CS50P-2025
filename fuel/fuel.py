@@ -19,6 +19,8 @@ def get_fraction(text):
                 break                
         except ValueError:
             pass
+        else:
+            break
     return numerator, denominator
     
     
