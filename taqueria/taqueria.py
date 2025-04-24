@@ -18,10 +18,9 @@ def main():
             total = 0
             for item in menu:
                 item = input("Item: ").title()
-                price = float(menu.get(item))
+                price = menu.get(item)
                 if price != None:
                     total += price
-                    total = round(total, 2)
                     print(f"Total: ${total}")
 
         except EOFError:
