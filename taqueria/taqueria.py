@@ -20,7 +20,7 @@ def main():
                 item = input("Item: ").title()
                 price = menu.get(item)
                 total += price
-                print(f"${total}")
+                print(f"Total: ${total}")
                 print(f"${price}")
 
         except EOFError:
