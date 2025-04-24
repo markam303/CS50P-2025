@@ -21,7 +21,7 @@ def main():
                 price = menu.get(item)
                 if price != None:
                     total += price
-                    print(f"Total: ${total}")
+                    print(f"Total: ${total:.2f}")
 
         except EOFError:
             break
