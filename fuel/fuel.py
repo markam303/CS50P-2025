@@ -3,7 +3,7 @@
 
 def main():
     numerator, denominator = get_fraction("Fraction: ")
-    percentage = (numerator * 100) / denominator
+    
     print(f"{percentage}%")
     
 
@@ -13,11 +13,12 @@ def get_fraction(text):
             numerator, denominator = input(text).split("/")
             numerator = int(numerator)
             denominator = int(denominator)   
-        except (ValueError):
+            percentage = (numerator * 100) / denominator
+        except (ValueError, ZeroDivisionError):
             pass
         else:
             break
-    return numerator, denominator
+    return percentage
     
     
 main()
