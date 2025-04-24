@@ -14,12 +14,10 @@ def get_fraction(text):
             numerator = int(numerator)
             denominator = int(denominator)
             if numerator < denominator:   
-                percentage = (numerator * 100) / denominator
+                return ((numerator * 100) / denominator)
         except (ValueError, ZeroDivisionError):
             pass
-        else:
-            break
-    return percentage
+
     
     
 main()
