@@ -13,15 +13,18 @@ menu = {
 }
 
 def main():
-    try:
-        item = input("Item: ").title()
-        total = 0
-        for item in menu:
-            price = menu.get(item)
-            total += price
-        print(f"${total}")
-    except EOFError:
-        print()
+    while True:
+        try:
+            item = input("Item: ").title()
+            total = 0
+            for item in menu:
+                price = menu.get(item)
+                total += price
+            print(f"${total}")
+            print(f"${price}")
+
+        except EOFError:
+            print()
 
 
 main()
