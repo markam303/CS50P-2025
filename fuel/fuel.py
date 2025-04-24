@@ -10,7 +10,7 @@ def main():
 def get_fraction(text):
     while True:
         try:
-            numerator, denominator = int(input(text).split("/"))
+            numerator, denominator = input(text).split("/")
             
             if numerator > denominator:
                 pass
