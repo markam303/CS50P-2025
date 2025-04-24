@@ -4,4 +4,7 @@ while True:
     except ValueError:
         print("x is not a number")
     else:
-        print(f"x is {x}")
+        break
+        
+
+print(f"x is {x}")
