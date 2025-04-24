@@ -2,16 +2,22 @@
 
 
 def main():
-    fraction = get_int("Fraction: ")
-    numerator, denominator = fraction.slice("/")
+    fraction = get_fraction("Fraction: ")
+    
 
-
-def get_int(text):
+def get_fraction(text):
     while True:
         try:
-            return int(input(text))
+            numerator, denominator = int(input(text)).slice("/")
+            if numerator > denominator:
+                pass
+            elif denominator == 0:
+                pass                
         except ValueError:
             pass
-
-
+        else:
+            break
+    return numerator, denominator
+    
+    
 main()
