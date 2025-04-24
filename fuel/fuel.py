@@ -2,7 +2,7 @@
 
 
 def main():
-    fraction = get_fraction("Fraction: ")
+    numerator, denominator = get_fraction("Fraction: ")
     
 
 def get_fraction(text):
