@@ -19,7 +19,7 @@ def get_fraction(text):
                 pass
             else:
                 break                
-        except ValueError:
+        except (ValueError, ZeroDivisionError):
             pass
         else:
             break
