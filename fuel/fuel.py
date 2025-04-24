@@ -11,7 +11,8 @@ def get_fraction(text):
     while True:
         try:
             numerator, denominator = input(text).split("/")
-            
+            numerator = int(numerator)
+            denominator = int(denominator)
             if numerator > denominator:
                 pass
             elif denominator == 0:
