@@ -3,6 +3,8 @@
 
 def main():
     numerator, denominator = get_fraction("Fraction: ")
+    percentage = (numerator * 100) / denominator
+    print(f"{percentage}%")
     
 
 def get_fraction(text):
@@ -12,7 +14,8 @@ def get_fraction(text):
             if numerator > denominator:
                 pass
             elif denominator == 0:
-                pass                
+                pass
+                            
         except ValueError:
             pass
         else:
