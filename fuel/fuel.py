@@ -15,7 +15,8 @@ def get_fraction(text):
                 pass
             elif denominator == 0:
                 pass
-                            
+            else:
+                break                
         except ValueError:
             pass
         else:
