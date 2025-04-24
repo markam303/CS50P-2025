@@ -6,7 +6,6 @@ def main():
     numerator, denominator = fraction.slice("/")
 
 
-
 def get_int(text):
     while True:
         try:
