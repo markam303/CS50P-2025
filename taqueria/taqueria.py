@@ -18,7 +18,7 @@ def main():
             total = 0
             for item in menu:
                 item = input("Item: ").title()
-                price = menu.get(item)
+                price = float(menu.get(item))
                 if price != None:
                     total += price
                     total = round(total, 2)
