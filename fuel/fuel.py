@@ -3,7 +3,7 @@
 
 def main():
     fraction = get_int("Fraction: ")
-    
+    numerator, denominator = fraction.slice("/")
 
 
 
