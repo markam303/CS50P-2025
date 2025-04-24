@@ -24,6 +24,7 @@ def main():
                     print(f"Total: ${total}")
 
         except EOFError:
+            break
             print()
 
 
