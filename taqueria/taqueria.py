@@ -21,6 +21,7 @@ def main():
                 price = menu.get(item)
                 if price != None:
                     total += price
+                    total = round(total, 2)
                     print(f"Total: ${total}")
 
         except EOFError:
