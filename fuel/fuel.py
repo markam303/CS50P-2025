@@ -15,8 +15,6 @@ def get_fraction(text):
             denominator = int(denominator)
             if numerator > denominator:
                 pass
-            elif denominator == 0:
-                pass
             else:
                 break                
         except (ValueError, ZeroDivisionError):
