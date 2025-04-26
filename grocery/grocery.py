@@ -13,7 +13,6 @@ try:
         elif item in grocery_list:
             grocery_list[item] += 1
            
-        grocery_list = sorted(grocery_list)
 except EOFError:
     print()
     grocery_list = sorted(grocery_list)
