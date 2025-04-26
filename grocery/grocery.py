@@ -1,13 +1,14 @@
 ### Grocery List ###
 # This program allows a user to create a grocery list, add items to it, and view the list.
 
-grocery_list = {"item":"price",
+grocery_list = {"item":"amount",
                 }  # Initialize an empty grocery list as a dictionary
 
 try:
     while True:
         item = input("").upper()
-        grocery_list.append(item)
+        if item not in grocery_list:
+            grocery_list.append(item)
         grocery_list = sorted(grocery_list)
 except EOFError:
     print()
