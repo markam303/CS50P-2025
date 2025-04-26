@@ -9,7 +9,7 @@ try:
     while True:
         item = input("").upper()
         if item not in grocery_list:
-            grocery_list.update({item: 1})
+            grocery_list.append({item: 1})
         elif item in grocery_list:
             grocery_list[item] += 1
            
