@@ -3,6 +3,6 @@
 
 grocery_list = []  # Initialize an empty grocery list
 while True:
-    item = input("")
+    item = input("").upper()
     grocery_list.append(item)
     grocery_list = sorted(grocery_list)
