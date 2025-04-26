@@ -8,9 +8,12 @@ try:
     while True:
         item = input("").upper()
         if item not in grocery_list:
-            grocery_list.append(item)
+            grocery_list.append(item)  # Add the item to the grocery list
+            amount += 1 
+            grocery_list[item] = amount  
+            
         grocery_list = sorted(grocery_list)
 except EOFError:
     print()
     for item in grocery_list:
-        print(item)
+        print(amount, item)
