@@ -1,7 +1,8 @@
 ### Grocery List ###
 # This program allows a user to create a grocery list, add items to it, and view the list.
 
-grocery_list = {}  # Initialize an empty grocery list as a dictionary
+grocery_list = {"item":"price",
+                }  # Initialize an empty grocery list as a dictionary
 
 try:
     while True:
