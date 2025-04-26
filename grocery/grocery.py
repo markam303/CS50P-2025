@@ -9,5 +9,6 @@ try:
         grocery_list.append(item)
         grocery_list = sorted(grocery_list)
 except EOFError:
+    print()
     for item in grocery_list:
         print(item)
