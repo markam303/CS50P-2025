@@ -15,6 +15,5 @@ try:
            
 except EOFError:
     print()
-    grocery_list = sorted(grocery_list)
     for item in grocery_list:
-        print(grocery_list[item], item )
+        print(grocery_list["item"], item )
