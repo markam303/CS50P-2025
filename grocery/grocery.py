@@ -13,6 +13,6 @@ try:
            
 except EOFError:
     print()
-    grocery_list = sorted(grocery_list.items())
+    grocery_list = dict(sorted(grocery_list.items()))
     for item in grocery_list:
         print(grocery_list[item], item )
