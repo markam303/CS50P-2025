@@ -15,22 +15,28 @@ months = [
     "December"
 ]
 
-
-while True:
-    date = input("Date: ")
-    try:
-        month, day, year = date.split("/")
-        break
-    except ValueError:
-        pass
-        month, day, year = date.split(" ")
-        if month in months:
-            day = day.strip(",")
-            month == months.index(month)
+def main():
+    while True:
+        date = input("Date: ")
+        try:
+            day, month, year = check_format(date)
             break
-        else:
+        except ValueError:
             pass
 
-        
-month, day, year = int(month), int(day), int(year)
-print(f"{year}-{month:02}-{day:02}")
+            
+    month, day, year = int(month), int(day), int(year)
+    print(f"{year}-{month:02}-{day:02}")
+
+def check_format(date):
+    if date in months:
+        month, day, year = date.split(" ")
+        day = day.strip(",")
+        month = months.index(month)
+        return day, month, year
+    elif date not in months:
+        month, day, year = date.split("/")
+        return day, month, year
+    
+
+main()
