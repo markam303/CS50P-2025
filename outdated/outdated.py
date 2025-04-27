@@ -34,7 +34,7 @@ def check_format(date):
         day = day.strip(",")
         month = months.index(month)
         return day, month, year
-    elif date not in months:
+    else:
         month, day, year = date.split("/")
         return day, month, year
     
