@@ -27,8 +27,7 @@ while True:
         day = day.strip(",")
         month == months.index(month)
         break
-    except ValueError:
-        pass
+
         
 
 print(f"{year}-{month:02}-{day:02}")
