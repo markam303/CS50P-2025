@@ -29,12 +29,12 @@ def main():
     print(f"{year}-{month:02}-{day:02}")
 
 def check_format(date):
-    if date in months:
+    try:
         month, day, year = date.split(" ")
         day = day.strip(",")
-        month = months.index(month)
+        month = (months.index(month) + 1)
         return day, month, year
-    else:
+    except:
         month, day, year = date.split("/")
         return day, month, year
     
