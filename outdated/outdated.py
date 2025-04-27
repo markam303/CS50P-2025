@@ -21,7 +21,8 @@ while True:
         month, day, year = date.split("/")
         break
     except ValueError:
-        month, day, year = date.split(" ").strip(",")
+        month, day, year = date.split(" ")
+        day = day.strip(",")
         break
         
 month, day, year = int(month), int(day), int(year)
