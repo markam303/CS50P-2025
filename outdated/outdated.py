@@ -1,4 +1,4 @@
-### Date conversion program ###
+### Date conversion program from US format to International ###
 
 months = [
     "January",
