@@ -33,7 +33,8 @@ def main():
 def check_format(date):
     try:
         month, day, year = date.split(" ")
-        day = int(day)
+        if not int(day):
+            return 1
         day = day.strip(",")
         month = (months.index(month) + 1)
         return day, month, year
