@@ -20,7 +20,7 @@ def main():
         date = input("Date: ")
         try:
             day, month, year = check_format(date)
-            if day not in list(range(1, 31)):
+            if day in list(range(1, 32)):
                 break
         except ValueError:
             pass
