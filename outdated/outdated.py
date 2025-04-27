@@ -40,6 +40,8 @@ def check_format(date):
         return day, month, year
 
 def check_date(day, month):
+    day = int(day)
+    month = int(month)
     return 1 <= month <= 12 and 1 <= day <= 31
         
     
