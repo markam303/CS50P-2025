@@ -23,12 +23,11 @@ def main():
             month, day, year = int(month), int(day), int(year)
             if check_date(day, month):
                 break
-        except ValueError:
+        except (ValueError, TypeError):
             pass
-
             
-
     print(f"{year:04}-{month:02}-{day:02}")
+
 
 def check_format(date):
     try:
@@ -42,9 +41,9 @@ def check_format(date):
         month, day, year = date.split("/")
         return day, month, year
 
+
 def check_date(day, month):
-    return 1 <= month <= 12 and 1 <= day <= 31
-        
+    return 1 <= month <= 12 and 1 <= day <= 31        
     
 
 main()
