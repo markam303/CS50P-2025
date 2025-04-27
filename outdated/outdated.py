@@ -17,4 +17,4 @@ months = [
 
 date = input("Date: ")
 month, day, year = date.split("/")
-print(f"{year}-{month:02}-{day:02}")
+print(f"{year}-{month:03}-{day:03}")
