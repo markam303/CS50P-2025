@@ -24,8 +24,11 @@ while True:
         break
     except ValueError:
         month, day, year = date.split(" ")
-        day = day.strip(",")
-        month == months.index(month)
+        if month in months:
+            day = day.strip(",")
+            month == months.index(month)
+        else:
+            pass
         break
 
         
