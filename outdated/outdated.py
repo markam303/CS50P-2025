@@ -22,8 +22,6 @@ def main():
             day, month, year = check_format(date)
             if check_date(day, month):
                 break
-            else:
-                pass
         except ValueError:
             pass
 
