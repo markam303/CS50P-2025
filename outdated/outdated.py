@@ -20,7 +20,7 @@ def main():
         date = input("Date: ")
         try:
             day, month, year = check_format(date)
-            if not check_date(day, month):
+            if check_date(day, month):
                 break
         except ValueError:
             pass
@@ -40,7 +40,7 @@ def check_format(date):
         return day, month, year
 
 def check_date(day, month):
-    return day in range(1, 13) and month in range(1, 32)
+    return day in list(range(1, 13)) and month in list(range(1, 32))
         
     
 
