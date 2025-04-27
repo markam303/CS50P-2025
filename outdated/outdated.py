@@ -26,9 +26,9 @@ while True:
         if month in months:
             day = day.strip(",")
             month == months.index(month)
+            break
         else:
             pass
-        break
 
         
 month, day, year = int(month), int(day), int(year)
