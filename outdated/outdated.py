@@ -27,7 +27,7 @@ def main():
 
             
     month, day, year = int(month), int(day), int(year)
-    print(f"{year}-{month:02}-{day:02}")
+    print(f"{year:04}-{month:02}-{day:02}")
 
 def check_format(date):
     try:
