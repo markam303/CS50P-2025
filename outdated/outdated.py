@@ -20,7 +20,7 @@ def main():
         date = input("Date: ")
         try:
             day, month, year = check_format(date)
-            if notcheck_date(day, month):
+            if not check_date(day, month):
                 break
             else:
                 pass
