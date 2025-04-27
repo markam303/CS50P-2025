@@ -24,6 +24,7 @@ while True:
     except ValueError:
         month, day, year = date.split(" ")
         day = day.strip(",")
+        month = months.index("September")
         break
         
 
