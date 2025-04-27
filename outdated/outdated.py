@@ -16,6 +16,9 @@ months = [
 ]
 
 date = input("Date: ")
-month, day, year = date.split("/")
+try:
+    month, day, year = date.split("/")
+except ValueError:
+    month, day, year = date.split(" ").strip(",")
 month, day, year = int(month), int(day), int(year)
 print(f"{year}-{month:02}-{day:02}")
