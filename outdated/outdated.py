@@ -21,8 +21,7 @@ def main():
         try:
             day, month, year = check_format(date)
             if day in list(range(1, 32)):
-                if month in list(range(1, 13)):
-                    break
+                break
         except ValueError:
             pass
 
