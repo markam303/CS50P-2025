@@ -20,13 +20,14 @@ def main():
         date = input("Date: ")
         try:
             day, month, year = check_format(date)
+            month, day, year = int(month), int(day), int(year)
             if check_date(day, month):
                 break
         except ValueError:
             pass
 
             
-    month, day, year = int(month), int(day), int(year)
+
     print(f"{year:04}-{month:02}-{day:02}")
 
 def check_format(date):
@@ -40,8 +41,6 @@ def check_format(date):
         return day, month, year
 
 def check_date(day, month):
-    day = int(day)
-    month = int(month)
     return 1 <= month <= 12 and 1 <= day <= 31
         
     
