@@ -20,7 +20,8 @@ def main():
         date = input("Date: ")
         try:
             day, month, year = check_format(date)
-            break
+            if day in range[1:31] and month in range[1:12]:
+                break
         except ValueError:
             pass
 
