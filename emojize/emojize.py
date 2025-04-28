@@ -1,3 +1,5 @@
 ### Convert str to emoji ###
-from emoji import emojize
+from emoji import emojize # type: ignore
+
+
 
