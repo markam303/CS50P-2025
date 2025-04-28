@@ -1,5 +1,5 @@
 ### Convert str to emoji ###
-from emoji import emojize # type: ignore
+import emoji
 
 text = input("Input: ")
-print(emojize(text))
+print(emoji.emojize(text))
