@@ -1,1 +1,23 @@
 from twttr import shorten
+import pytest
+
+
+def main():
+    test_text()
+    
+
+def test_text():
+    assert shorten("twitter") == "twttr"
+    assert shorten("CS50") == "CS50"
+    assert shorten("What's your name?") == "CS50"
+
+
+def test_number():
+    with pytest.raises(TypeError):
+        shorten("111")
+        shorten("0")
+    
+    
+    
+if __name__ == "__main__":
+    main()
