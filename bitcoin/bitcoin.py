@@ -1,7 +1,6 @@
 ### Bitcoin Price Index ###
 import sys
 import requests
-import json
 
 
 def main():
