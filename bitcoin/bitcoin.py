@@ -13,9 +13,9 @@ def main():
     response = requests.get(url + API_key)
     
     o = response.json()
-    
-    for data in o["data"]:
-        print(data["priceUsd"])
+    price = o["data"]["priceUsd"]
+
+    print(data["priceUsd"])
     
     # print(f"${amount:,.4f}")
         
