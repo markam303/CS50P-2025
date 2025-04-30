@@ -13,7 +13,7 @@ def test_text():
 
 
 def test_number():
-    with pytest.raises(TypeError):
+    with pytest.raises(AttributeError):
         shorten(1)
         shorten(0)
     
