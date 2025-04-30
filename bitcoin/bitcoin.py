@@ -14,10 +14,11 @@ def main():
     
     o = response.json()
     price = o["data"]["priceUsd"]
-
-    print(data["priceUsd"])
+    n = sys.argv[1]
+    amount = price * n
     
-    # print(f"${amount:,.4f}")
+    print(price)
+    print(f"${amount:,.4f}")
         
 if __name__ == "__main__":
     main()
