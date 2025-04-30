@@ -13,7 +13,6 @@ def main():
     response = requests.get(url + API_key)
     
     o = response.json()
-    o = json.loads(o)
     
     for data in o["data"]:
         print(data["priceUsd"])
