@@ -13,8 +13,8 @@ def main():
     response = requests.get(url + API_key)
     
     o = response.json()
-    price = o["data"]["priceUsd"]
-    n = sys.argv[1]
+    price = float(o["data"]["priceUsd"])
+    n = float(sys.argv[1])
     amount = price * n
     
     print(price)
