@@ -14,7 +14,7 @@ def main():
     o = response.json()
     o = json.loads(o)
     
-    for data, x in o["data"]:
+    for data in o["data"]:
         print(data["priceUsd"])
     
     # print(f"${amount:,.4f}")
