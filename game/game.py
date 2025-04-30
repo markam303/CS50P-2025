@@ -22,8 +22,7 @@ def main():
             print("Too large!")
             pass
         else:
-            sys.exit("Just right!")
-            
+            sys.exit("Just right!") 
 
 
 def get_level():
@@ -33,8 +32,7 @@ def get_level():
             return level
         except (ValueError, TypeError):
             pass        
-        except level < 1:
-            pass
+
 
 def get_guess():
     while True:
@@ -43,8 +41,7 @@ def get_guess():
             return guess
         except (ValueError, TypeError):
             pass
-        except guess < 1:
-            pass
+
 
     
 if __name__ == "__main__":
