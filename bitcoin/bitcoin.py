@@ -12,7 +12,8 @@ def main():
     response = requests.get("https://rest.coincap.io/v3/assets/bitcoin?apiKey=" + API_key)
     
     o = response.json()
-    print(data["priceUsd"])
+    for data in o["data"]:
+        print(data["priceUsd"])
     
     # print(f"${amount:,.4f}")
         
