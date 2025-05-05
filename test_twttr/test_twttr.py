@@ -7,15 +7,16 @@ def test_vowels():
     
     
 def test_consonants_only():    
-    assert shorten("CS50") == "CS50"
+    assert shorten("CSS") == "CSS"
     
     
 def test_omitting_punctuation():
     assert shorten("what's your name?") == "wht's yr nm?"
+    assert shorten("hello, my name is Charlie.") == "hello, my name is Charlie."
 
 
 def test_omitting_numbers():
-    ...
+    assert shorten("CS50") == "CS50"
 
 
 def test_all_uppercase():
