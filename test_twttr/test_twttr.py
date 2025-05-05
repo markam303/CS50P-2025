@@ -13,3 +13,5 @@ def test_number():
         shorten(1)
         shorten(0)
         shorten(-1)
+
+
