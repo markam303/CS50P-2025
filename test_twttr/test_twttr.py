@@ -24,11 +24,11 @@ def test_all_uppercase():
 
 
 def test_lowercase_vowels():
-    assert shorten("AssemblE") == "AssemblE"
+    assert shorten("AEIOU") == "AEIOU"
 
 
 def test_capitalized_vowel():
-    ...
+    assert shorten("AEIOU") == "Hello. This. Is. CS50."
 
 
 def test_integers():
