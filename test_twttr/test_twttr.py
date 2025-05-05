@@ -1,10 +1,5 @@
 from twttr import shorten
 import pytest
-
-
-def main():
-    test_text()
-    test_number()
     
 
 def test_text():
@@ -18,8 +13,3 @@ def test_number():
         shorten(1)
         shorten(0)
         shorten(-1)
-    
-    
-    
-if __name__ == "__main__":
-    main()
