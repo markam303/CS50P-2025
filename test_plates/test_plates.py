@@ -19,3 +19,7 @@ def test_numbers():
     assert is_valid("AA107") == True
     assert is_valid("AA1000") == False
 
+
+def test_punctuations():
+    assert is_valid("AA.!S") == False
+    assert is_valid("AA 23") == False
