@@ -15,7 +15,6 @@ def main():
     
 def gauge(percentage):
     # Print empty or full rather than %
-    percentage = int(percentage)
     if 0 <= percentage <= 1:
         return "E"
     elif 99 <= percentage <= 100:
