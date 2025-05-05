@@ -29,12 +29,14 @@ def convert(text):
         numerator, denominator = text.split("/")
         numerator = int(numerator)
         denominator = int(denominator)
-        if numerator <= denominator: 
-            percentage = int(round(((numerator * 100) / denominator)))
-            return percentage
+
     except ValueError:
         raise ValueError
-    except (denominator == "0"):
+    try:
+        if numerator <= denominator: 
+            percentage = round(((numerator * 100) / denominator))
+            return percentage
+    except (denominator == 0):
         raise ZeroDivisionError
 
 
