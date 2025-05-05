@@ -9,9 +9,9 @@ def main():
     
 def gauge(percentage):
     # Print empty or full rather than %
-    if 0 <= gauge(percentage) <= 1:
+    if 0 <= percentage <= 1:
         return "E"
-    elif 99 <= gauge(percentage) <= 100:
+    elif 99 <= percentage <= 100:
         return "F"
     else:
         return f"{percentage}%"
