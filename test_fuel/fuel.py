@@ -32,8 +32,10 @@ def convert(text):
         if numerator <= denominator: 
             percentage = round(((numerator * 100) / denominator))  
             return percentage
-    except (ValueError, ZeroDivisionError, TypeError):
-        pass
+    except (ValueError, TypeError):
+        raise ValueError
+    except ZeroDivisionError:
+        raise ZeroDivisionError
 
 if __name__ == "__main__":    
     main()
