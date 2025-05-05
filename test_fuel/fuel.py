@@ -29,10 +29,9 @@ def convert(text):
         numerator, denominator = text.split("/")
         numerator = int(numerator)
         denominator = int(denominator)
-
     except ValueError:
         raise ValueError
-    try:
+
         if numerator <= denominator: 
             percentage = round(((numerator * 100) / denominator))
             return percentage
