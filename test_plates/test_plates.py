@@ -18,6 +18,9 @@ def test_numbers():
     assert is_valid("AA007") == False
     assert is_valid("AA107") == True
     assert is_valid("AA1000") == True
+    assert is_valid("123456") == False
+    assert is_valid("12AAA") == False
+    assert is_valid("AA12AA") == False
 
 
 def test_punctuations():
