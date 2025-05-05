@@ -4,6 +4,7 @@ import pytest
 
 def main():
     test_text()
+    test_number()
     
 
 def test_text():
