@@ -16,11 +16,12 @@ def test_gauge_boundaries():
 def test_gauge():
     assert gauge(25) == f"25%"
     
-def test_errors():
+def test_errorV():
     with pytest.raises(ValueError):
-        gauge("cat/dog")
+        convert("cat/dog")
+        
+def test_errorZ():
     with pytest.raises(ZeroDivisionError):
-        gauge("1/0")
-    with pytest.raises(TypeError):
-        gauge("catdog")
+        convert("1/0")
+
         

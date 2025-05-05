@@ -34,7 +34,7 @@ def convert(text):
             return percentage
     except ValueError:
         raise ValueError
-    except ZeroDivisionError:
+    except (denominator == 0):
         raise ZeroDivisionError
 
 
