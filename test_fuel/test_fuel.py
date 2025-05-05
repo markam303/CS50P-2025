@@ -17,10 +17,10 @@ def test_gauge():
     assert gauge(25) == f"25%"
     
 def test_errors():
-    with pytest.raises(TypeError):
+    with pytest.raises(ValueError):
         gauge("cat/dog")
     with pytest.raises(ZeroDivisionError):
         gauge("1/0")
-    with pytest.raises(ValueError):
+    with pytest.raises(TypeError):
         gauge("catdog")
         
