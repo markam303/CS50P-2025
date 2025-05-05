@@ -16,6 +16,7 @@ def test_number():
     with pytest.raises(AttributeError):
         shorten(1)
         shorten(0)
+        shorten(-1)
     
     
     
