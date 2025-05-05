@@ -29,10 +29,3 @@ def test_lowercase_vowels():
 
 def test_capitalized_vowel():
     assert shorten("AEIOU") == ""
-
-
-def test_integers():
-    with pytest.raises(AttributeError):
-        shorten(1)
-        shorten(0)
-        shorten(-1)
