@@ -24,7 +24,7 @@ def test_all_uppercase():
 
 
 def test_lowercase_vowels():
-    assert shorten("AEIOU") == "AEIOU"
+    assert shorten("aeiou") == "aeiou"
 
 
 def test_capitalized_vowel():
