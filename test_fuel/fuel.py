@@ -25,17 +25,13 @@ def gauge(percentage):
 
 # Function to get fractions from users; designed to handle potential Errors
 def convert(text):
-    try:
-        numerator, denominator = text.split("/")
-        numerator = int(numerator)
-        denominator = int(denominator)
-        if numerator <= denominator: 
-            percentage = round(((numerator * 100) / denominator))  
-            return percentage
-    except (ValueError, TypeError):
-        raise ValueError
-    except ZeroDivisionError:
-        raise ZeroDivisionError
+    numerator, denominator = text.split("/")
+    numerator = int(numerator)
+    denominator = int(denominator)
+    if numerator <= denominator: 
+        percentage = round(((numerator * 100) / denominator))  
+        return percentage
+
 
 if __name__ == "__main__":    
     main()
