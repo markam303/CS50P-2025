@@ -63,4 +63,5 @@ def check_marks(plate):
         return 5
 
 
-main()
+if __name__ == "__main__":
+    main()
