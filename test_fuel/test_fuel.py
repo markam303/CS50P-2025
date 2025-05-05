@@ -17,7 +17,7 @@ def test_gauge_boundaries():
 def test_gauge():
     assert gauge(25) == f"25%"
     
-def test_gauge_error():
+def test_errors():
     with pytest.raises(ValueError, ZeroDivisionError):
         gauge("cat/dog")
         gauge("1/0")

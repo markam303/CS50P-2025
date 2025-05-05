@@ -2,6 +2,7 @@
 
 
 def main():
+    
     percentage = convert()
     percentage = round(percentage)
     print(gauge(percentage))
@@ -21,7 +22,7 @@ def gauge(percentage):
 def convert(text):
     while True:
         try:
-            numerator, denominator = input(text).split("/")
+            numerator, denominator = text.split("/")
             numerator = int(numerator)
             denominator = int(denominator)
             if numerator <= denominator: 
