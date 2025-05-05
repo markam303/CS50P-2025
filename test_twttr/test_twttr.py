@@ -1,5 +1,5 @@
-from twttr import shorten
 import pytest
+from twttr import shorten
     
 
 def test_vowels():
@@ -12,7 +12,7 @@ def test_consonants_only():
     
 def test_omitting_punctuation():
     assert shorten("what's your name?") == "wht's yr nm?"
-    assert shorten("hello, my name is Charlie.") == "hello, my name is Charlie."
+    assert shorten("hello, my name is Charlie.") == "hll, my nm s Chrl."
 
 
 def test_omitting_numbers():
@@ -24,11 +24,11 @@ def test_all_uppercase():
 
 
 def test_lowercase_vowels():
-    assert shorten("aeiou") == "aeiou"
+    assert shorten("aeiou") == ""
 
 
 def test_capitalized_vowel():
-    assert shorten("AEIOU") == "Hello. This. Is. CS50."
+    assert shorten("AEIOU") == ""
 
 
 def test_integers():
