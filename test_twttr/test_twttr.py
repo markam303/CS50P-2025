@@ -20,11 +20,11 @@ def test_omitting_numbers():
 
 
 def test_all_uppercase():
-    ...
+    assert shorten("DDDDDD") == "DDDDDD"
 
 
 def test_lowercase_vowels():
-    ...
+    assert shorten("AssemblE") == "AssemblE"
 
 
 def test_capitalized_vowel():
