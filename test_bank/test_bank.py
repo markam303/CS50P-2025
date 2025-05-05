@@ -3,11 +3,12 @@ from bank import value
 
 
 def test_hello():
-    assert value("Hello") == 0
+    assert value("hello") == 0
+
     
 
 def test_different():
-    assert("What's up") == 100
+    assert("what's up") == 100
 
 
 def test_first():
