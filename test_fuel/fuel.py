@@ -2,7 +2,7 @@
 
 
 def main():
-    percentage = convert("Fraction: ")
+    percentage = convert()
     percentage = round(percentage)
     print(gauge(percentage))
     
