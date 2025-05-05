@@ -6,4 +6,4 @@ def test_convert():
     ...
 
 def test_gauge():
-    assert gauge(25) == 
+    assert gauge(25) == f"25%"
