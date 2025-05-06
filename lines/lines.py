@@ -11,7 +11,18 @@ def main():
         sys.exit("Too many command-line arguments")
     elif not sys.argv[1].endswith(".py"):
         sys.exit("Not a Python file")
+    else:    
+        try:
+            file = open(sys.argv[1])       
+        except FileNotFoundError:
+            sys.exit("File does not exist")
     
+    
+    
+    
+    
+    file.close()
+        
     
     
 
