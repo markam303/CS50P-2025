@@ -9,24 +9,12 @@ def main():
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
-    else:
-        pass
-    
-    if not check_extension(sys.argv[1]):
+    elif not sys.argv[1].endswith(".py"):
         sys.exit("Not a Python file")
-
     
     
+    
 
-def check_extension(str):
-    try:
-        a, b = str.split(".")
-    except ValueError:
-        return False
-    if b == "py":
-        return True
-    else:
-        return False
 
 if __name__ == "__main__":
     main()
