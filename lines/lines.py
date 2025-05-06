@@ -19,15 +19,15 @@ def main():
     
     count = 0
     for line in file:
-        count += 1
+        if line[0].startswith("#") or line[0].startswith(" "):
+            count += 0
+        else:
+            count += 1
     
-    
+    print(count)
     
     file.close()
         
-    
-    
-
 
 if __name__ == "__main__":
     main()
