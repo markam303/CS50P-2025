@@ -19,7 +19,7 @@ def main():
     
     count = 0
     for line in file:
-        if line[0].lstrip().startswith("#") or line[0].rstrip().startswith("\n"):
+        if line[0].lstrip().startswith("#") or line[0].startswith("\n") or line[0].startswith[" "]:
             count += 0
         else:
             count += 1
