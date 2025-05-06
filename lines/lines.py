@@ -9,8 +9,13 @@ def main():
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 2:
         sys.exit("Too many command-line arguments")
-    elif not check_extension(sys.argv[1]):
+    else:
+        pass
+    
+    if not check_extension(sys.argv[1]):
         sys.exit("Not a Python file")
+
+    
     
 
 def check_extension(str):
