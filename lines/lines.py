@@ -17,7 +17,9 @@ def main():
         except FileNotFoundError:
             sys.exit("File does not exist")
     
-    
+    count = 0
+    for line in file:
+        count += 1
     
     
     
