@@ -1,3 +1,4 @@
-with open("students.txt") as file:
+with open("students.csv") as file:
     for line in file:
-        line.rstrip().split(",")
+        row = line.rstrip().split(",")
+        print(f"{row[0]} is in {row[1]}")
