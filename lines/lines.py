@@ -19,7 +19,9 @@ def main():
     
     count = 0
     for line in file:
-        if line[0].startswith("#") or line[0].startswith("\n"):
+        if line[0].startswith("#"):
+            count += 0
+        elif line[0].startswith("\n"):
             count += 0
         else:
             count += 1
