@@ -7,9 +7,9 @@ with open("students.csv") as file:
         students.append(student)
         
 
-def get_house(student):
-    return student["house"]
+def get_name(student):
+    return student["name"]
 
 
-for student in sorted(students, key=get_house):
+for student in sorted(students, key=get_name):
     print(f"{student['name']} is in {student['house']}")
