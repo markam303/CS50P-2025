@@ -32,7 +32,7 @@ def main():
         writer.writeheader()
         for line in list:
             last, first = line["name"].split(",")
-            last = last.lstrip()
+            first = first.strip()
             house = line["house"]
             writer.writerow({"first": first, "last": last, "house": house})
         return 0
