@@ -24,7 +24,7 @@ def main():
     with open(sys.argv[2], "w") as file_output:
         writer = csv.DictWriter(file_output, fieldnames=["first", "last", "house"])
         for line in list:
-            last, first, house = line.strip('"').split(",")
+            last, first, house = line.split(",")
             writer.writeheader()
             writer.writerow({"first": first, "last": last, "house": house})
         
