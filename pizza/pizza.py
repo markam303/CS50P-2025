@@ -19,7 +19,7 @@ def main():
     # Print file as grid
     try:
         with open(sys.argv[1]) as file:
-            reader = csv.DictReader(file)
+            reader = csv.DictReader(file, fieldnames="firstrow")
             table = tabulate(reader, headers="firstrow" , tablefmt="grid")
             print(table)
     except FileNotFoundError:
