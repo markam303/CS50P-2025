@@ -14,6 +14,7 @@ def main():
     elif not sys.argv[1].endswith(".csv"):
         sys.exit("Not a CSV file")
     
+    # Print file as grid
     try:
         with open(sys.argv[1]) as file:
             print(tabulate(file))
