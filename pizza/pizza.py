@@ -20,6 +20,9 @@ def main():
     try:
         with open(sys.argv[1]) as file:
             reader = csv.DictReader(file, fieldnames="firstrow")
+            for row in reader:
+                print(row)
+                
             table = tabulate(reader, headers="firstrow" , tablefmt="grid")
             print(table)
     except FileNotFoundError:
