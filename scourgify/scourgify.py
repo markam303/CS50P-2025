@@ -34,6 +34,7 @@ def main():
             last, first = line["name"].split(",")
             house = line["house"]
             writer.writerow({"first": first, "last": last, "house": house})
+        return 0
         
     
 if __name__ == "__main__":
