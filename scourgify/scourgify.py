@@ -31,7 +31,7 @@ def main():
         writer = csv.DictWriter(file_output, fieldnames=["first", "last", "house"])
         writer.writeheader()
         for line in list:
-            last, first = line["name"].split(",")
+            last, first = line["name"].lstrip().split(",")
             house = line["house"]
             writer.writerow({"first": first, "last": last, "house": house})
         return 0
