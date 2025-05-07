@@ -23,8 +23,8 @@ def main():
     
     with open(sys.argv[2], "w") as file_output:
         writer = csv.DictWriter(file_output, fieldnames=["first", "last", "house"])
-        for _ in list:
-            last, first, house = list.strip('"').split(",")
+        for line in list:
+            last, first, house = line.strip('"').split(",")
             writer.writeheader()
             writer.writerow({"first": first, "last": last, "house": house})
         
