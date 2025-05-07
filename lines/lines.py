@@ -17,6 +17,7 @@ def main():
         except FileNotFoundError:
             sys.exit("File does not exist")
     
+    # Count lines, with whitespaces, comments excluded
     count = 0
     for line in file:
         if line[0].lstrip().startswith("#") or line[0].removeprefix(" ").startswith("\n") or line[0].isspace():
