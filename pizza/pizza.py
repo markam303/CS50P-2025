@@ -2,6 +2,8 @@
 
 import sys
 
+import csv
+
 from tabulate import tabulate
 
 
@@ -17,7 +19,9 @@ def main():
     # Print file as grid
     try:
         with open(sys.argv[1]) as file:
-            print(tabulate(file, headers="firstrow" , tablefmt="grid"))
+            reader = csv.DictReader(file)
+            table = tabulate(reader, headers="firstrow" , tablefmt="grid")
+            print(table)
     except FileNotFoundError:
         sys.exit("File not")
         
