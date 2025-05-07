@@ -21,12 +21,13 @@ def main():
             list.append(row)
     
     
-    
     with open(sys.argv[2], "w") as file_output:
-        writer = csv.DictWriter(file_output)
+        writer = csv.DictWriter(file_output, fieldnames=["first", "last", "house"])
+        for _ in list:
+            last, first, house = list.strip('"').split(",")
+            writer.writeheader()
+            writer.writerow({"first": first, "last": last, "house": house})
         
-    
-    
     
 if __name__ == "__main__":
     main()
