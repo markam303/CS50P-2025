@@ -17,7 +17,7 @@ def main():
     # Print file as grid
     try:
         with open(sys.argv[1]) as file:
-            print(tabulate(file, headers="firstrow"))
+            print(tabulate(file, headers="firstrow" , tablefmt="grid"))
     except FileNotFoundError:
         sys.exit("File not")
         
