@@ -21,7 +21,7 @@ def main():
             list.append(row)
     
     with open(sys.argv[2], "w") as file_output:
-        writer = csv.DictWriter
+        writer = csv.DictWriter(file_output)
         
     
     
