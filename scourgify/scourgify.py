@@ -14,14 +14,20 @@ def main():
     elif not sys.argv[1].endswith(".csv"):
         sys.exit("Wrong file format")
     
+    # Create temp list of dicts to store information from csv file
     list = []
-    with open(sys.argv[1]) as file_input:
-        reader = csv.DictReader(file_input)
-        for row in reader:
-            list.append(row)
     
+    # Open file and copy it to list if it exists
+    try:
+        with open(sys.argv[1]) as file_input:
+            reader = csv.DictReader(file_input)
+            for row in reader:
+                list.append(row)
+    except FileNotFoundError:
+        sys.exit(f"Could not read {sys.argv[1]}")
     
-    with open(sys.argv[2], "w") as file_output:
+    # Writing to file after sorting First, Last, House
+    with open(sys.argv[2], "w", newline="") as file_output:
         writer = csv.DictWriter(file_output, fieldnames=["first", "last", "house"])
         writer.writeheader()
         for line in list:
