@@ -19,8 +19,6 @@ def main():
     # Extract extensions
     input_extension = os.path.splitext(sys.argv[1])[1].lower()
     output_extension = os.path.splitext(sys.argv[2])[1].lower()
-    ext2 = ext2.lower()
-    ext1 = ext1.lower()
     
     # Check for allowed extensions
     allowed_ext = [".jpg", ".jpeg", ".png"]
