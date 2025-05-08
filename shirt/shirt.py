@@ -33,12 +33,12 @@ def main():
         
     with PIL.Image.open(sys.argv[1]) as input:
         input = PIL.ImageOps.fit(input)
-        age.open("shirt.png")
-        size = shirt.size
     
     with PIL.Image.open(sys.argv[2], "w") as output:
         output.paste()
-    shirt = PIL.Im
+        shirt = PIL.Image.open("shirt.png") 
+        
+        shirt.close()   
 
 
 if __name__ == "__main__":
