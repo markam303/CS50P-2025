@@ -35,7 +35,9 @@ def main():
         PIL.ImageOps.fit(input)
         shirt = PIL.Image.open("shirt.png")
         size = shirt.size
-        
+    
+    with PIL.Image.open(sys.argv[2], "w") as output:
+        output.paste()
     
 
 
