@@ -16,7 +16,9 @@ def main():
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
 
-    output_file = os.path.splitext(sys.argv[2])
+    # Check extensions
+    root, ext = os.path.splitext(sys.argv[2])
+    allowed_ext = [".jpg", ".jpeg", ".png"]
 
 
 def extract_extension(text):
