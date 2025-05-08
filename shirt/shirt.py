@@ -6,7 +6,7 @@ Possible extensions: jpg, jpeg, png.
 
 import sys
 import os
-import PIL
+from PIL import Image, ImageOps
 
 
 def main():
@@ -30,14 +30,17 @@ def main():
         sys.exit("Invalid input")
     elif not ext1 == ext2:
         sys.exit("Input and output have different extensions")
-        
-    with PIL.Image.open(sys.argv[1]) as input:
-        input = PIL.ImageOps.fit(input)
     
-    with PIL.Image.open(sys.argv[2], "w") as output:
-        shirt = PIL.Image.open("shirt.png") 
-        output.paste(input, shirt)
-        shirt.close()   
+    shirt = Image.open("shirt.png") 
+    size = shirt.size   
+    
+    with Image.open(sys.argv[1]) as input:
+        refit = ImageOps.fit(input, size=size)
+        output = Image.new()
+        output.paste(refit, shirt)
+        output.save(sys.argv[2])
+    
+    shirt.close()
 
 
 if __name__ == "__main__":
