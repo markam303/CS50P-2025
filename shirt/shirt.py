@@ -31,6 +31,7 @@ def main():
     elif not ext1 == ext2:
         sys.exit("Input and output have different extensions")
     
+    # Overlay input image with shirt image and produce output image
     shirt = Image.open("shirt.png") 
     size_shirt = shirt.size   
     
