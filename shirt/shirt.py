@@ -34,13 +34,15 @@ def main():
     # Overlay input image with shirt image and produce output image
     shirt = Image.open("shirt.png") 
     size_shirt = shirt.size   
-    
-    with Image.open(sys.argv[1]) as input:
-        input = ImageOps.fit(input, size_shirt)
-        output = Image.new("RGB", size_shirt)
-        output = input
-        output.paste(shirt, shirt)
-        output.save(root2 + ext2)
+    try:
+        with Image.open(sys.argv[1]) as input:
+            input = ImageOps.fit(input, size_shirt)
+            output = Image.new("RGB", size_shirt)
+            output = input
+            output.paste(shirt, shirt)
+            output.save(root2 + ext2)
+    except FileNotFoundError:
+        sys.exit("Input does not exist")
     
     shirt.close()
 
