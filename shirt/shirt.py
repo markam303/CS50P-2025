@@ -37,7 +37,7 @@ def main():
         with Image.open(sys.argv[1]) as input:
             input = ImageOps.fit(input, size_shirt)
             output = Image.new("RGB", size_shirt)
-            output = input
+            output = input.copy()
             output.paste(shirt, shirt)
             output.save(sys.argv[2])
     except FileNotFoundError:
