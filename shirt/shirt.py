@@ -16,14 +16,22 @@ def main():
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
 
-    # Check extensions
-    root, ext = os.path.splitext(sys.argv[2])
+    # Extract extensions
+    root, ext2 = os.path.splitext(sys.argv[2])
+    root, ext1 = os.path.splitext(sys.argv[1])
+    ext2 = ext2.lower()
+    ext1 = ext1.lower()
     
     # Check for allowed extensions
     allowed_ext = [".jpg", ".jpeg", ".png"]
-    if ext.lower() not in allowed_ext:
+    if ext2 not in allowed_ext:
         sys.exit("Invalid output")
-
+    elif ext1 not in allowed_ext:
+        sys.exit("Invalid input")
+    elif not ext1 == ext2:
+        sys.exit("Input and output have different extensions")
+        
+    
 
 
 
