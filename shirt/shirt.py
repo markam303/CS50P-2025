@@ -34,7 +34,7 @@ def main():
     with PIL.Image.open(sys.argv[1]) as input:
         PIL.ImageOps.fit(input)
         
-
+    
 
 
 if __name__ == "__main__":
