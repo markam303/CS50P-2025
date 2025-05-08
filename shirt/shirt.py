@@ -32,10 +32,11 @@ def main():
         sys.exit("Input and output have different extensions")
     
     shirt = Image.open("shirt.png") 
-    size = shirt.size   
+    size_shirt = shirt.size   
     
     with Image.open(sys.argv[1]) as input:
-        refit = ImageOps.fit(input)
+        size_default = input.size
+        refit = ImageOps.fit(input, )
         output = Image.new("RGB", size)
         output.paste(refit, shirt)
         output.save(root2 + ext2)
