@@ -6,7 +6,7 @@ Possible extensions: jpg, jpeg, png.
 
 import sys
 import os
-from PIL import Image
+import PIL
 
 
 def main():
@@ -31,7 +31,8 @@ def main():
     elif not ext1 == ext2:
         sys.exit("Input and output have different extensions")
         
-    
+    with PIL.Image.open(sys.argv[1]) as input:
+        PIL.ImageOps.fit(input)
 
 
 
