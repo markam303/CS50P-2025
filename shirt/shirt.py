@@ -38,7 +38,7 @@ def main():
     with Image.open(sys.argv[1]) as input:
         input = ImageOps.fit(input, size_shirt)
         output = Image.new("RGB", size_shirt)
-        output.paste(shirt, shirt)
+        output == input.paste(shirt, shirt)
         output.save(root2 + ext2)
     
     shirt.close()
