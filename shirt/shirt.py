@@ -17,18 +17,18 @@ def main():
         sys.exit("Too many command-line arguments")
 
     # Extract extensions
-    root2, ext2 = os.path.splitext(sys.argv[2])
-    root1, ext1 = os.path.splitext(sys.argv[1])
+    input_extension = os.path.splitext(sys.argv[1])[1].lower()
+    output_extension = os.path.splitext(sys.argv[2])[1].lower()
     ext2 = ext2.lower()
     ext1 = ext1.lower()
     
     # Check for allowed extensions
     allowed_ext = [".jpg", ".jpeg", ".png"]
-    if ext2 not in allowed_ext:
+    if output_extension not in allowed_ext:
         sys.exit("Invalid output")
-    elif ext1 not in allowed_ext:
+    elif input_extension not in allowed_ext:
         sys.exit("Invalid input")
-    elif not ext1 == ext2:
+    elif not input_extension == output_extension:
         sys.exit("Input and output have different extensions")
     
     # Overlay input image with shirt image and produce output image
@@ -40,7 +40,7 @@ def main():
             output = Image.new("RGB", size_shirt)
             output = input
             output.paste(shirt, shirt)
-            output.save(root2 + ext2)
+            output.save(sys.argv[2])
     except FileNotFoundError:
         sys.exit("Input does not exist")
     
