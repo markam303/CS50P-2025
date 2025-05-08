@@ -31,7 +31,8 @@ def main():
     
     # Overlay input image with shirt image and produce output image
     shirt = Image.open("shirt.png") 
-    size_shirt = shirt.size   
+    size_shirt = shirt.size  
+     
     try:
         with Image.open(sys.argv[1]) as input:
             input = ImageOps.fit(input, size_shirt)
