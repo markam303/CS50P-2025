@@ -1,9 +1,12 @@
-"""CS50 P-Shirt. 
+"""
+CS50 P-Shirt. 
 Provide input img as first CLA and name of output img as second CLA.
 Possible extensions: jpg, jpeg, png.
 """
 
 import sys
+
+from pip import Image
 
 
 def main():
