@@ -17,8 +17,8 @@ def main():
         sys.exit("Too many command-line arguments")
 
     # Extract extensions
-    root, ext2 = os.path.splitext(sys.argv[2])
-    root, ext1 = os.path.splitext(sys.argv[1])
+    root2, ext2 = os.path.splitext(sys.argv[2])
+    root1, ext1 = os.path.splitext(sys.argv[1])
     ext2 = ext2.lower()
     ext1 = ext1.lower()
     
@@ -36,9 +36,9 @@ def main():
     
     with Image.open(sys.argv[1]) as input:
         refit = ImageOps.fit(input, size=size)
-        output = Image.new("RGBA", size)
+        output = Image.new("RGB", size)
         output.paste(refit, shirt)
-        output.save(sys.argv[2])
+        output.save(root2 + ext2)
     
     shirt.close()
 
