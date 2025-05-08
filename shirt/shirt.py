@@ -36,7 +36,7 @@ def main():
     
     with Image.open(sys.argv[1]) as input:
         refit = ImageOps.fit(input, size=size)
-        output = Image.new()
+        output = Image.new(, size)
         output.paste(refit, shirt)
         output.save(sys.argv[2])
     
