@@ -37,7 +37,7 @@ def main():
     with PIL.Image.open(sys.argv[2], "w") as output:
         output.paste()
         shirt = PIL.Image.open("shirt.png") 
-        
+        output.paste(input,)
         shirt.close()   
 
 
