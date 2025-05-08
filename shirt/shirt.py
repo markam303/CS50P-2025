@@ -17,7 +17,8 @@ def main():
         sys.exit("Too many command-line arguments")
     elif not os.path.splitext(sys.argv[2]) in [".png", ".jpg", ".jpeg"]:
         sys.exit("Invalid output")
-        
+    else:
+        print("Good")
     
 
 
