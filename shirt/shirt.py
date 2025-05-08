@@ -18,11 +18,14 @@ def main():
 
     # Check extensions
     root, ext = os.path.splitext(sys.argv[2])
+    
+    # Check for allowed extensions
     allowed_ext = [".jpg", ".jpeg", ".png"]
+    if ext.lower() not in allowed_ext:
+        sys.exit("Invalid output")
 
 
-def extract_extension(text):
-    os.path.splitext("text")
+
 
 
 if __name__ == "__main__":
