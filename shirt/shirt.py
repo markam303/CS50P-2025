@@ -32,13 +32,13 @@ def main():
         sys.exit("Input and output have different extensions")
         
     with PIL.Image.open(sys.argv[1]) as input:
-        PIL.ImageOps.fit(input)
-        shirt = PIL.Image.open("shirt.png")
+        input = PIL.ImageOps.fit(input)
+        age.open("shirt.png")
         size = shirt.size
     
     with PIL.Image.open(sys.argv[2], "w") as output:
         output.paste()
-    
+    shirt = PIL.Im
 
 
 if __name__ == "__main__":
