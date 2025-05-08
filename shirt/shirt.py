@@ -15,11 +15,12 @@ def main():
         sys.exit("Too few command-line arguments")
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
-    elif not os.path.splitext(sys.argv[2]) in [".png", ".jpg", ".jpeg"]:
-        sys.exit("Invalid output")
-    else:
-        print("Good")
+
     
+
+
+def extract_extension(text):
+    os.path.splitext("text")
 
 
 if __name__ == "__main__":
