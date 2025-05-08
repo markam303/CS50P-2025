@@ -16,7 +16,7 @@ def main():
     elif len(sys.argv) > 3:
         sys.exit("Too many command-line arguments")
 
-    
+    output_file = os.path.splitext(sys.argv[2])
 
 
 def extract_extension(text):
