@@ -9,7 +9,8 @@ def main():
 
 
 def validate(ip):
-    if match := re.search(r"(\d)*\.\d*\.\d*\.\d*", ip):
+    
+    if match := re.search(r"(\D)\.(\D)*\.(\D)*\.(\D)*", ip):
         return True
     else:
         return False
