@@ -6,6 +6,5 @@ url = input("URL: ").strip()
 # username = re.sub(r"^(https?://)?(www\.)?twitter\.com/", "", url)
 # print(f"Username: {username}")
 
-matches = re.search(r"^https://(?:www\.)?twitter\.com/(.+)$", url, re.IGNORECASE)
-if matches:
+if matches := re.search(r"^https://(?:www\.)?twitter\.com/(.+)$", url, re.IGNORECASE):
     print(f"Username:", matches.group(1))
