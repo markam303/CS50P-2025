@@ -9,7 +9,7 @@ def main():
 
 
 def validate(ip):
-    re.search(r"")
+    re.search(r"[0-255]\.[0-255]\.[0-255].[0-255]")
 
 
     
