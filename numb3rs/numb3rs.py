@@ -9,10 +9,10 @@ def main():
 
 
 def validate(ip):
+    re.search(r"")
+
+
     
-
-
-    ...
 
 
 if __name__ == "__main__":
