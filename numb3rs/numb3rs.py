@@ -9,8 +9,10 @@ def main():
 
 
 def validate(ip):
-    return re.search(r"[0-255]\.[0-255]\.[0-255].[0-255]", ip)
-
+    if match := re.search(r"[0-255]\.[0-255]\.[0-255].[0-255]", ip):
+        return True
+    else:
+        return False
 
 
 if __name__ == "__main__":
