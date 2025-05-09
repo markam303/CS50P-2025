@@ -9,19 +9,21 @@ def main():
 
 
 def validate(ip):
-    
-    match = re.search(r"^(.)\.(.)\.(.)\.(.)$", ip)
-    if match:
-        if match.groups(1) in [0-256]:
-            return True
-        if match.groups(2) in [0-256]:
-            return True
-        if match.groups(3) in [0-256]:
-            return True
-        if match.groups(4) in [0-256]:
-            return True
-    else:
+    # Check if IP address is in correct range
+    match = re.fullmatch(r"(\d{1,3})\.(\d{1,3})\.(\d{1,3})\.(\d{1,3})", ip)
+    if not match:
         return False
+    
+    groups = match.groups()
+    
+    for group in groups:
+        if len(group) > 1 and group.startswith("0"):
+            return False
+        
+        if not 0 <= int(group) <= 255:
+            return False
+    
+    return True
 
 
 if __name__ == "__main__":
