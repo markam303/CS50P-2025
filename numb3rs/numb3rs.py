@@ -10,8 +10,16 @@ def main():
 
 def validate(ip):
     
-    if match := re.search(r"(\D)\.(\D)*\.(\D)*\.(\D)*", ip):
-        return True
+    match = re.search(r"^(.)\.(.)\.(.)\.(.)$", ip)
+    if match:
+        if match.groups(1) in [0-256]:
+            return True
+        if match.groups(2) in [0-256]:
+            return True
+        if match.groups(3) in [0-256]:
+            return True
+        if match.groups(4) in [0-256]:
+            return True
     else:
         return False
 
