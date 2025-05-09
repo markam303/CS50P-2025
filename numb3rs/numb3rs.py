@@ -9,7 +9,7 @@ def main():
 
 
 def validate(ip):
-    if match := re.fullmatch(r"*\.*\.*\.*", ip):
+    if match := re.fullmatch(r"\d*\.\d*\.\d*\.\d*", ip):
         return True
     else:
         return False
