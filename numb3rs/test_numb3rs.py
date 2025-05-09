@@ -9,6 +9,7 @@ def test_string():
      
 def test_boundaries():
     assert validate("0.0.0.0") == True
+    assert validate("1.1.1.1") == True
     assert validate("255.255.255.255") == True
     assert validate("12.12.11.12") == True
 
