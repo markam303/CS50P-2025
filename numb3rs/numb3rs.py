@@ -5,15 +5,12 @@ import sys
 
 
 def main():
-    address = input("IPv4 Address: ")
-    print(validate(address))
+    print(validate(input("IPv4 Address: ")))
 
 
 def validate(ip):
-    re.search(r"[0-255]\.[0-255]\.[0-255].[0-255]")
+    return re.search(r"[0-255]\.[0-255]\.[0-255].[0-255]", ip)
 
-
-    
 
 
 if __name__ == "__main__":
