@@ -24,7 +24,7 @@ def convert(s):
 
     start_hr, start_min, start_period, end_hr, end_min, end_period = match.groups()
     
-    if not (1 <= int(start_hr) <= 12) or not (1 <= end_hr <= 12):
+    if not (1 <= int(start_hr) <= 12) or not (1 <= int(end_hr) <= 12):
         raise ValueError
     
     start_min = get_min(start_min)
@@ -37,7 +37,7 @@ def convert(s):
     
         
 def convert_hrs(hr, period):
-    
+    hr = int(hr)
     if period == "AM":
         return hr if hr != 12 else 0
     else:
