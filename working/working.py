@@ -27,7 +27,9 @@ def convert(s):
     if not (1 <= int(start_hr) <= 12) or not (1 <= end_hr <= 12):
         raise ValueError
     
-    
+    start_min = get_min(start_min)
+    end_min = get_min(end_min)
+
     
         
         
