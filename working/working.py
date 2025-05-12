@@ -19,6 +19,7 @@ def convert(s):
         \s*$                # trailing ws
         """
     match = re.search(pattern, s, re.X)
+    return match
 
 
 if __name__ == "__main__":
