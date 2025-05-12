@@ -18,17 +18,28 @@ def convert(s):
         \s*(AM|PM)        # AM PM with leading ws
         \s*$                # trailing ws
         """
-    match = re.search(pattern, s, re.X)
+    match = re.match(pattern, s, re.X)
+    if not match:
+        raise ValueError
 
-    midday = match.group(3)
-    if midday == "AM":
-        hour1 = match.group(1) + match.group(2)
+    start_hr, start_min, start_period, end_hr, end_min, end_period = match.groups()
+    
+    if not (1 <= int(start_hr) <= 12) or not (1 <= end_hr <= 12):
+        raise ValueError
+    
+    
+    
         
         
-        
+    
             
-        
-...
+def get_min(m):
+    if m is None:
+        return 0
+    if not 0 <= int(m) <= 59:
+        raise ValueError
+    return int(m)        
+
 
 if __name__ == "__main__":
     main()
