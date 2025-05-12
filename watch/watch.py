@@ -9,7 +9,7 @@ def main():
 
 
 def parse(s):
-    ...
+    re.search("")
 
 
 ...
