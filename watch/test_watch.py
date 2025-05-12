@@ -30,3 +30,11 @@ def test_moreattributes():
         )
         == f"https://youtu.be/xvFZjo5PgG0"
     )
+
+
+def test_wrongurl():
+    assert (
+        parse('<iframe width="560" height="315" src="https://cs50.harvard.edu/python"></iframe>')
+        == None
+    )
+    
