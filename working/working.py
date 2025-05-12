@@ -37,6 +37,7 @@ def convert(s):
     
         
 def convert_hrs(hr, period):
+    
     if period == "AM":
         return hr if hr != 12 else 0
     else:
