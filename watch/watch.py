@@ -9,10 +9,14 @@ def main():
 
 
 def parse(s):
-    match = re.search(r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed/([^"]+)')
-
-
-...
+    match = re.search(
+        r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed/([^"]+)"',
+        s, re.IGNORECASE)
+    
+    if match:
+        video_id = match.group(1)
+        return f"https://youtu.be/{video_id}"
+    return None
 
 
 if __name__ == "__main__":
