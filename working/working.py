@@ -19,9 +19,7 @@ def convert(s):
         \s*$                # trailing ws
         """
     match = re.search(pattern, s, re.X)
-    if match:
-        if match.group(3) == "AM":
-            pas
+    
             
         
 ...
