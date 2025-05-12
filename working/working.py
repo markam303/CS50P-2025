@@ -27,8 +27,11 @@ def convert(s):
     if not (1 <= int(start_hr) <= 12) or not (1 <= int(end_hr) <= 12):
         raise ValueError
     
-    start_min = get_min(start_min)
-    end_min = get_min(end_min)
+    try:
+        start_min = get_min(start_min)
+        end_min = get_min(end_min)
+    except ValueError:
+        raise ValueError
     
     start_24h = convert_hrs(start_hr, start_period)
     end_24h = convert_hrs(end_hr, end_period)
