@@ -21,6 +21,7 @@ def convert(s):
     match = re.fullmatch(pattern, s, re.X)
     if not match:
         raise ValueError
+        return 1
 
     start_hr, start_min, start_period, end_hr, end_min, end_period = match.groups()
     
