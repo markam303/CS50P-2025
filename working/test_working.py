@@ -31,6 +31,9 @@ def test_wronginput():
         convert("13:00 AM to 5 PM")
         convert("9:60 AM to 5 PM")
         convert("9 AM 5 PM")
+        convert("13 PM to 17 PM")
+        convert("9:60 AM to 9:60 PM")
+        convert("9 AM - 9 PM")
         
 
 
