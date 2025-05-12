@@ -29,10 +29,18 @@ def convert(s):
     
     start_min = get_min(start_min)
     end_min = get_min(end_min)
-
+    
+    start_24h = convert_hrs(start_hr, start_period)
+    end_24h = convert_hrs(end_hr, end_period)
+    
+    return f"{start_24h:02}:{start_min:02} to {end_24h:02}:{end_min:02}"    
     
         
-        
+def convert_hrs(hr, period):
+    if period == "AM":
+        return hr if hr != 12 else 0
+    else:
+        return hr + 12 if hr != 12 else 12   
     
             
 def get_min(m):
