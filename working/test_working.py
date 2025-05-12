@@ -27,6 +27,10 @@ def test_wronginput():
         convert("09:00 AM - 17:00 PM")
         convert("22 - 5 PM")
         convert("13 AM - 25 PM")
+        convert("0 AM to 5 PM")
+        convert("13:00 AM to 5 PM")
+        convert("9:60 AM to 5 PM")
+        convert("9 AM 5 PM")
         
 
 
