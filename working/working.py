@@ -18,7 +18,7 @@ def convert(s):
         \s+(AM|PM)          # AM PM with leading ws
         \s*$                # trailing ws
         """
-    match = re.fullmatch(pattern, s, re.X)
+    match = re.fullmatch(pattern, s, re.X, re.IGNORECASE)
     if not match:
         raise ValueError
     
