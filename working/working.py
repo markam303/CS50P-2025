@@ -19,7 +19,11 @@ def convert(s):
         \s*$                # trailing ws
         """
     match = re.search(pattern, s, re.X)
-    
+
+    midday = match.group(3)
+    print(midday)
+        
+        
             
         
 ...
