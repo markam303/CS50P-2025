@@ -30,7 +30,6 @@ def convert(s):
     try:
         start_min = get_min(start_min)
         end_min = get_min(end_min)
-
     except ValueError:
         raise ValueError
     
