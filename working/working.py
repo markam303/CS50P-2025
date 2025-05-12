@@ -21,7 +21,9 @@ def convert(s):
     match = re.search(pattern, s, re.X)
 
     midday = match.group(3)
-    print(midday)
+    if midday == "AM":
+        hour1 = match.group(1) + match.group(2)
+        
         
         
             
