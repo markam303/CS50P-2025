@@ -52,7 +52,12 @@ def get_min(m):
         return 0
     if not 0 <= int(m) <= 59:
         raise ValueError
-    return int(m)        
+    return int(m)     
+
+def get_hr(hr):
+    if not 0 <= int(hr) <= 12:
+        raise ValueError
+    return int(hr)     
 
 
 if __name__ == "__main__":
