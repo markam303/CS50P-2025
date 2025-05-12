@@ -9,7 +9,7 @@ def main():
 
 
 def parse(s):
-    match = re.search("<iframe[^>]*src")
+    match = re.search(r'<iframe[^>]*src="https?://(?:www\.)?youtube\.com/embed')
 
 
 ...
