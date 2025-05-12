@@ -30,8 +30,7 @@ def convert(s):
     try:
         start_min = get_min(start_min)
         end_min = get_min(end_min)
-        start_hr = get_hr(start_hr)
-        end_hr = get_hr(end_hr)
+
     except ValueError:
         raise ValueError
     
@@ -54,12 +53,7 @@ def get_min(m):
         return 0
     if not 0 <= int(m) <= 59:
         raise ValueError
-    return int(m)     
-
-def get_hr(hr):
-    if not 0 <= int(hr) <= 12:
-        raise ValueError
-    return int(hr)     
+    return int(m)      
 
 
 if __name__ == "__main__":
