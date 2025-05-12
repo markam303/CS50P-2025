@@ -6,7 +6,7 @@ from numb3rs import validate
 def test_string():
     assert validate("cat") == False
     assert validate("cat.cat.cat.cat") == False
-     
+    assert validate("cat.dog.elephant.cat") == False 
 def test_boundaries():
     assert validate("0.0.0.0") == True
     assert validate("1.1.1.1") == True
@@ -20,3 +20,4 @@ def test_wrong():
     assert validate("300.300.300.300") == False
     assert validate("10.10.01.10") == False
     assert validate("127.300.0.1") == False
+    assert validate("127.1.2.356") == False
