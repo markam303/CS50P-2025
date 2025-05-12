@@ -30,6 +30,8 @@ def convert(s):
     try:
         start_min = get_min(start_min)
         end_min = get_min(end_min)
+        start_hr = get_hr(start_hr)
+        end_hr = get_hr(end_hr)
     except ValueError:
         raise ValueError
     
