@@ -21,3 +21,7 @@ def test_wrong():
     assert validate("10.10.01.10") == False
     assert validate("127.300.0.1") == False
     assert validate("127.1.2.356") == False
+    assert validate('127.300.1.2') == False
+    assert validate('127.1.300.2') == False
+    assert validate('127.1.2.300') == False
+    assert validate('127.300.300.300') == False
