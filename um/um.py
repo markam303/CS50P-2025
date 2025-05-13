@@ -7,7 +7,7 @@ def main():
 
 
 def count(s):
-    pattern = r"\s?um(?:,\?\.!)?\s?"
+    pattern = r"(^\s)?um((,\?\.!)+)?\s?"
     matches = re.findall(pattern, s, re.IGNORECASE)
     count = 0
     for match in matches:
