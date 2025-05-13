@@ -15,4 +15,9 @@ def test_uppercase_um():
     
 
 def test_dotdotdot_um():
-    assert count("Um, thanks, um...")
+    assert count("Um, thanks, um...") == 2
+    
+
+def test_inside_um():
+    assert count("yummy") == 0
+    assert count("yum") == 0
