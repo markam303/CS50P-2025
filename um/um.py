@@ -11,6 +11,7 @@ def count(s):
     count = 0
     for match in matches:
         count += 1
+    return count
     
 
 
