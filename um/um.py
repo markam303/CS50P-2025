@@ -7,7 +7,8 @@ def main():
 
 
 def count(s):
-    matches = re.search(r"\s?um(?:,\?!)?\s?", s, re.IGNORECASE)
+    pattern = r"\s?um(?:,\?!)?\s?"
+    matches = re.search(pattern, s, re.IGNORECASE)
     count = 0
     for match in matches:
         count += 1
