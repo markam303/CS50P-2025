@@ -1,3 +1,8 @@
+"""
+Counts the number of times the word 'um' appears in a string,
+possibly surrounded by spaces or punctuation.
+"""
+
 import re
 import sys
 
@@ -7,7 +12,7 @@ def main():
 
 
 def count(s):
-    pattern = r"(\s)?um((,\?\.!)*)?(\s)?"
+    pattern = r"\bum[.,!?]*\b"
     matches = re.findall(pattern, s, re.IGNORECASE)
     return len(matches)
     
