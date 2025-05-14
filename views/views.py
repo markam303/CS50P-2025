@@ -4,21 +4,14 @@ import csv
 
 
 def main():
-    with open("views.csv", "r", errors='ignore') as file, open("analysis.csv", "w") as analysis:
+    with open("views.csv", "r", encoding='UTF-8') as file, open("analysis.csv", "w") as analysis:
         reader = csv.DictReader(file)
         writer = csv.DictWriter(analysis, fieldnames=reader.fieldnames + ["brightness"])
         writer.writeheader()
         
         for row in reader:
-            brightness = calculate_brightness(f"{row['id']}.jpeg")
-            writer.writerow(
-                {
-                    "id": row["id"],
-                    "english_title": row["english_title"],
-                    "japanese_title": row["japanese_title"],
-                    "brightness": brightness
-                }
-            )
+            row["brightness"] = calculate_brightness(f"{row['id']}.jpeg")
+            writer.writerow()
 
 def calculate_brightness(filename):
     with Image.open(filename) as image:
