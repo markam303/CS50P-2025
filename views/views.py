@@ -11,7 +11,14 @@ def main():
         
         for row in reader:
             brightness = calculate_brightness(f"{row['id']}.jpeg")
-            print(round(brightness, 2))
+            writer.writerow(
+                {
+                    "id": row["id"],
+                    "english_title": row["english_title"],
+                    "japanese_title": row["japanese_title"],
+                    "brightness": brightness
+                }
+            )
 
 def calculate_brightness(filename):
     with Image.open(filename) as image:
