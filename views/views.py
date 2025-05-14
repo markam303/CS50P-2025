@@ -4,7 +4,7 @@ import csv
 
 
 def main():
-    with open("views.csv") as file, open("analysis.csv", "w") as analysis:
+    with open("views.csv", "r", encoding="utf-8") as file, open("analysis.csv", "w") as analysis:
         reader = csv.DictReader(file)
         writer = csv.DictWriter(analysis, fieldnames=reader.fieldnames + ["brightness"])
         writer.writeheader()
