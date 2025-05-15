@@ -40,16 +40,17 @@ def main():
     student = get_student()
     print(f"{student.name} from {student.house}")
     print(student)
-    print("Expecto Patronum!")
-    print(student.charm())
+    
+    # print("Expecto Patronum!")
+    # print(student.charm())
     
  
 # Return class
 def get_student():
     name = input("Name: ")
     house = input("House: ")
-    patronus = input("Patronus: ")
-    return Student(name, house, patronus)
+    # patronus = input("Patronus: ")
+    return Student(name, house) # patronus
 
 
 
