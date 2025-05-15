@@ -19,7 +19,8 @@ class Student:
     def name(self, name):
         if not name:
             raise ValueError("Missing name")
-        
+        self._name = name
+
         
     # Getter
     @property
