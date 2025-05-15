@@ -7,12 +7,19 @@ def main():
     print(f"{student.name} from {student.house}")
 
 
-# Return class
 def get_student():
+    name = input("Name: ")
+    house = input("House: ")
+    student = Student(name, house)
+    return student
+
+
+# Return class
+""" def get_student():
     student = Student()
     student.name = input("Name: ")
     student.house = input("House: ")
-    return student    
+    return student    """ 
 
 
 # Return dictionary
