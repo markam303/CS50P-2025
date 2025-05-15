@@ -6,15 +6,15 @@ class Student:
 
 def main():
     student = get_student()
-    if student["name"] == "Padma":
-        student["house"] = "Ravenclaw"
-    print(f"{student['name']} from {student['house']}")
+    print(f"{student.name} from {student.house}")
 
 
+# Return class
 def get_student():
     student = Student()
-    
-    
+    student.name = input("Name: ")
+    student.house = input("House: ")
+    return student    
 
 
 # Return dictionary
