@@ -8,6 +8,7 @@ def main():
     print(f"{student.name} from {student.house}")
 
 
+# Return class
 def get_student():
     name = input("Name: ")
     house = input("House: ")
