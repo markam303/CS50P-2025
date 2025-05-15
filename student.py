@@ -11,9 +11,16 @@ def get_student():
     return [name, house]
 
 
+# Return tuple
+# def get_student():
+#     name = input("Name ")
+#     house = input("House ")
+#     return name, house
+
+
+# Return values separately
 # def get_name():
 #     return input("Name: ")
-
 
 # def get_house():
 #     return input("House ")
