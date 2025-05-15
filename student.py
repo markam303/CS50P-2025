@@ -1,29 +1,34 @@
 def main():
     student = get_student()
-    if student[0] == "Padma":
-        student[1] = "Ravenclaw"
-    print(f"{student[0]} from {student[1]}")
+    print(f"{student["name"]} from {student["house"]}")
 
 
 def get_student():
+    student = {}
+    student["name"] = input("Name: ")
+    student["house"] = input("House: ")
+    return student
+
+# Return list
+""" def get_student():
     name = input("Name ")
     house = input("House ")
-    return [name, house]
+    return [name, house] """
 
 
 # Return tuple
-# def get_student():
-#     name = input("Name ")
-#     house = input("House ")
-#     return name, house
+""" def get_student():
+    name = input("Name ")
+    house = input("House ")
+    return name, house """
 
 
 # Return values separately
-# def get_name():
-#     return input("Name: ")
+""" def get_name():
+    return input("Name: ")
 
-# def get_house():
-#     return input("House ")
+def get_house():
+    return input("House ") """
 
 
 if __name__ == "__main__":
