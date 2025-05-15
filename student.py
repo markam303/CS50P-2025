@@ -14,13 +14,14 @@ class Student:
     def charm(self):
         match self.patronus:
             case "Stag":
-                return "Emoji_horse"
+                return ":horse:"
             case "Otter":
                 return "Emoji_otter"
             case "Jack Russell terrier":
                 return "emoji_dog"
             case _:
                 return "emoji_wand_default"        
+
 
 def main():
     student = get_student()
