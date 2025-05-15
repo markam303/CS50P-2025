@@ -8,7 +8,7 @@ def main():
 def get_student():
     name = input("Name ")
     house = input("House ")
-    return (name, house)
+    return [name, house]
 
 
 # def get_name():
