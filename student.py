@@ -25,9 +25,9 @@ class Student:
             case "Stag":
                 return ":horse:"
             case "Otter":
-                return "Emoji_otter"
+                return ":otter"
             case "Jack Russell terrier":
-                return "emoji_dog"
+                return ":dog:"
             case _:
                 return "emoji_wand_default"       """  
 
