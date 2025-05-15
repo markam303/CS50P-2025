@@ -1,3 +1,9 @@
+class Student:
+    ...
+    
+
+
+
 def main():
     student = get_student()
     if student["name"] == "Padma":
@@ -6,9 +12,17 @@ def main():
 
 
 def get_student():
+    student = Student()
+    
+    
+
+
+# Return dictionary
+""" def get_student():
     name = input("Name: ")
     house = input("House: ")
-    return {"name": name, "house": house}
+    return {"name": name, "house": house} """
+
 
 # Return list
 """ def get_student():
