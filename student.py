@@ -6,6 +6,11 @@ def main():
     print(f"{name} from {house}")
 
 
+def get_student():
+    name = input("Name ")
+    house = input("House ")
+
+
 def get_name():
     return input("Name: ")
 
