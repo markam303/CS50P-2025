@@ -4,7 +4,7 @@ class Jar:
         self.size = 0
 
     def __str__(self):
-        return (f"🍪")
+        return (f"🍪" * self.size)
         
     def deposit(self, n):
         self.size += n
@@ -38,6 +38,8 @@ def main():
     cap = jar.capacity
     print(jar.size)
     print(cap)
+    print(jar)
+    jar.deposit(5)
     print(jar)
     
 
