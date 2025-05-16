@@ -30,7 +30,6 @@ def minute_speller(minutes):
 def get_date(s):
     return date.fromisoformat(input(s))
 
-    
 
 def convert_to_min(seconds):
     return int(seconds / 60)
