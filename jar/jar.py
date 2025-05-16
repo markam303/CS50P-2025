@@ -5,10 +5,10 @@ class Jar:
         self.capacity = capacity
 
     def __str__(self):
-        return f"🍪" * self._capacity
+        return f"🍪" * self.capacity
 
     def deposit(self, n):
-        ...
+        self.capacity += n
 
     def withdraw(self, n):
         ...
