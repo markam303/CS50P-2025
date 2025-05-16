@@ -18,7 +18,9 @@ def main():
     
 def minute_speller(minutes):    
     p = inflect.engine()
-    return (p.number_to_words(minutes)).capitalize(), p.plural_noun("minute", count=minutes)
+    words = p.number_to_words(minutes).capitalize()
+    plural_minutes = p.plural_noun("minute", count=minutes)
+    return f"{words} {plural_minutes}"
 
 
 def get_date(s):
