@@ -7,15 +7,18 @@ import inflect
 def main():
     birthday = get_date("Date of Birthday: ")
     today = date.today()
+    
     delta = today - birthday
     delta = delta.total_seconds()
-    minutes = int(convert_to_min(delta))
-    print("Minutes:", minutes)
+    
+    minutes = int(convert_to_min(delta))   
+    speller = minute_speller(minutes)
+    print(speller)
     
     
 def minute_speller(minutes):    
     p = inflect.engine()
-    print((p.number_to_words(minutes)).capitalize(), p.plural_noun("minute", count=minutes))
+    return (p.number_to_words(minutes)).capitalize(), p.plural_noun("minute", count=minutes)
 
 
 def get_date(s):
