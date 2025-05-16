@@ -7,8 +7,8 @@ def main():
     birthday = get_date("Date of Birthday: ")
     today = date.today()
     delta = today - birthday
-
-    print(delta)
+    delta = delta.total_seconds()
+    print(convert_to_min(delta))
 
 
 def get_date(s):
@@ -19,8 +19,9 @@ def get_date(s):
     return d
     
 
-def convert_to_min(days):
-    return days
+def convert_to_min(seconds):
+    return (seconds / 60)
+    
     
 
 
