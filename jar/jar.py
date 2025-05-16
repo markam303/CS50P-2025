@@ -7,12 +7,14 @@ class Jar:
 
     def deposit(self, n):
         self.size += n
-        return self.size 
+        if self.size > self.capacity:
+            raise ValueError("Jar is full")
     
     def withdraw(self, n):
         self.size -= n
-        return self.size
-
+        if self.size < 0:
+            raise ValueError("Not enough cookies")
+        
     @property
     def capacity(self):
         return self._capacity
