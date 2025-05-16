@@ -15,7 +15,7 @@ def main():
     
     delta = delta.total_seconds()
     minutes = convert_to_min(delta)
-    
+    print(minutes)
     speller = minute_speller(minutes)
     print(speller)
     

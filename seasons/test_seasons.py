@@ -14,6 +14,6 @@ def test_error_date():
         get_date("01-01-1992")
         
         
-def test_get_date():
+def test_minute_speller():
     assert get_date("2024-05-16") == f"Five hundred twenty-five thousand, six hundred minutes"
     assert get_date("2023-05-16") == f"One million, fifty-two thousand, six hundred forty minutes"
