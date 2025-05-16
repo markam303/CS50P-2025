@@ -6,7 +6,7 @@ import re
 def main():
     birthday = input("Date of Birthday: ")
     birthday = date.fromisoformat(birthday)
-
+    today = date.today()
         
 
 ...
