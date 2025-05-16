@@ -1,4 +1,4 @@
-from datetime import date, timedelta
+from datetime import date
 import sys
 import re
 
@@ -8,8 +8,8 @@ def main():
     birthday = date.fromisoformat(birthday)
     today = date.today()
     delta = today - birthday
-    print(delta)  
-    print(type(delta))  
+
+ 
 
 ...
 
