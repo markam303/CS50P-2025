@@ -15,5 +15,5 @@ def test_error_date():
         
         
 def test_minute_speller():
-    assert get_date("2024-05-16") == f"Five hundred twenty-five thousand, six hundred minutes"
-    assert get_date("2023-05-16") == f"One million, fifty-two thousand, six hundred forty minutes"
+    assert minute_speller(525600) == f"Five hundred twenty-five thousand, six hundred minutes"
+    assert minute_speller(1052640) == f"One million, fifty-two thousand, six hundred forty minutes"
