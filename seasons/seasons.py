@@ -11,6 +11,9 @@ def main():
     delta = delta.total_seconds()
     minutes = int(convert_to_min(delta))
     print("Minutes:", minutes)
+    
+    
+def minute_speller(minutes):    
     p = inflect.engine()
     print((p.number_to_words(minutes)).capitalize(), p.plural_noun("minute", count=minutes))
 
