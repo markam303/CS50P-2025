@@ -11,7 +11,8 @@ def main():
     delta = delta.total_seconds()
     print("Seconds:", delta)
     print("Minutes:", convert_to_min(delta))
-    count = int(convert_to_min(delta))
+    minutes = int(convert_to_min(delta))
+    print("Minutes:", minutes)
 
 
 def get_date(s):
