@@ -12,7 +12,7 @@ def main():
     minutes = int(convert_to_min(delta))
     print("Minutes:", minutes)
     p = inflect.engine()
-    print(p.number_to_words(minutes), p.plural("minute", count=minutes))
+    print(p.number_to_words(minutes), p.plural_noun("minute", count=minutes))
 
 
 def get_date(s):
