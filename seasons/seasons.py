@@ -8,7 +8,9 @@ def main():
     today = date.today()
     delta = today - birthday
     delta = delta.total_seconds()
-    print(convert_to_min(delta))
+    print("Seconds:", delta)
+    print("Minutes:", convert_to_min(delta))
+    count = int(convert_to_min(delta))
 
 
 def get_date(s):
