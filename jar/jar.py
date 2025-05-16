@@ -10,6 +10,7 @@ class Jar:
     def deposit(self, n):
         self.capacity += n
         return self.capacity 
+    
     def withdraw(self, n):
         ...
 
