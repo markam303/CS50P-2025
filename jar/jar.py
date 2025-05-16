@@ -23,10 +23,9 @@ class Jar:
     def capacity(self, capacity):
         self._capacity = capacity
     
-
     @property
     def size(self):
-        ...
+        return self._size
 
 
 def main():
