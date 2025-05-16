@@ -5,13 +5,17 @@ import inflect
 
 
 def main():
-    birthday = get_date("Date of Birthday: ")
+    try:
+        birthday = get_date("Date of Birthday: ")
+    except ValueError:
+        sys.exit("Invalid date")
+        
     today = date.today()
-    
     delta = today - birthday
-    delta = delta.total_seconds()
     
+    delta = delta.total_seconds()
     minutes = convert_to_min(delta)
+    
     speller = minute_speller(minutes)
     print(speller)
     
@@ -24,11 +28,8 @@ def minute_speller(minutes):
 
 
 def get_date(s):
-    try:
-        d = date.fromisoformat(input(s))
-    except ValueError:
-        sys.exit("Invalid date")
-    return d
+    return date.fromisoformat(input(s))
+
     
 
 def convert_to_min(seconds):
