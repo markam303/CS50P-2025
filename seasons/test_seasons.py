@@ -4,8 +4,8 @@ from seasons import get_date, convert_to_min, minute_speller
 
 
 def test_convert():
-    assert convert_to_min(60) == "1"
-    assert convert_to_min(120) == "2"
+    assert convert_to_min(60) == 1
+    assert convert_to_min(120) == 2
     
 
 def test_error_date():

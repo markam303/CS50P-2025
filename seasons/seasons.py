@@ -11,7 +11,7 @@ def main():
     delta = today - birthday
     delta = delta.total_seconds()
     
-    minutes = int(convert_to_min(delta))   
+    minutes = convert_to_min(delta)
     speller = minute_speller(minutes)
     print(speller)
     
@@ -32,7 +32,7 @@ def get_date(s):
     
 
 def convert_to_min(seconds):
-    return (seconds / 60)
+    return int(seconds / 60)
     
 
 if __name__ == "__main__":
