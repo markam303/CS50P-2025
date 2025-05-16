@@ -27,9 +27,11 @@ class Jar:
 
 
 def main():
-    cap = Jar.capacity
+    cap = get_cap()
     print(cap)
     
+def get_cap():
+    return Jar.capacity
 
 
 if __name__ == "__main__":
