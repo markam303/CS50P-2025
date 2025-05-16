@@ -38,8 +38,12 @@ def main():
     cap = jar.capacity
     print(jar.size)
     print(cap)
+    jar.deposit(2)
     print(jar)
-
+    jar.deposit(10)
+    print(jar)
+    jar.deposit(10)
+    print(jar)
 
 if __name__ == "__main__":
     main()
