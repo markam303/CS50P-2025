@@ -28,13 +28,14 @@ class Jar:
         return self._size
     
     @size.setter
-    def size(self, size):
+    def size(self, size0):
         self._size = size
 
 
 def main():
     jar = Jar()
     cap = jar.capacity
+    print(jar.size)
     print(cap)
     print(jar)
     
