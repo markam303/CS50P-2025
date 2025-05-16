@@ -9,10 +9,9 @@ def main():
     today = date.today()
     delta = today - birthday
     delta = delta.total_seconds()
-    print("Seconds:", delta)
-    print("Minutes:", convert_to_min(delta))
     minutes = int(convert_to_min(delta))
     print("Minutes:", minutes)
+    
 
 
 def get_date(s):
@@ -26,7 +25,9 @@ def get_date(s):
 def convert_to_min(seconds):
     return (seconds / 60)
     
-    
+
+def spell_number(number):
+        
 
 
 if __name__ == "__main__":
