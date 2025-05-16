@@ -13,9 +13,8 @@ def main():
 
 
 def get_date(s):
-    d = str(input(s))
     try:
-        d = date.fromisoformat(d)
+        d = date.fromisoformat(input(s))
     except ValueError:
         sys.exit("Invalid date")
     return d
