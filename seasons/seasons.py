@@ -8,7 +8,7 @@ def main():
     birthday = date.fromisoformat(birthday)
     today = date.today()
     delta = today - birthday
-    delta = timedelta.minutes
+    delta = timedelta(delta)
     print(delta)    
 
 ...
