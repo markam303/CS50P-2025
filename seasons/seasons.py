@@ -11,7 +11,8 @@ def main():
     delta = delta.total_seconds()
     minutes = int(convert_to_min(delta))
     print("Minutes:", minutes)
-    
+    p = inflect.engine()
+    print(p.number_to_words(minutes), )
 
 
 def get_date(s):
@@ -25,10 +26,6 @@ def get_date(s):
 def convert_to_min(seconds):
     return (seconds / 60)
     
-
-def spell_number(number):
-        
-
 
 if __name__ == "__main__":
     main()
