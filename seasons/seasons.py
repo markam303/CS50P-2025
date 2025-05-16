@@ -5,7 +5,6 @@ import sys
 
 def main():
     birthday = get_date("Date of Birthday: ")
-    birthday = date.fromisoformat(birthday)
     today = date.today()
     delta = today - birthday
 
@@ -20,7 +19,9 @@ def get_date(s):
     return d
     
 
-...
+def convert_to_min(days):
+    return days
+    
 
 
 if __name__ == "__main__":
