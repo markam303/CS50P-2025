@@ -39,10 +39,6 @@ def main():
     print(jar.size)
     print(cap)
     print(jar)
-    jar.deposit(5)
-    print(jar)
-    
-
 
 
 if __name__ == "__main__":
