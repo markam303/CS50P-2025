@@ -30,8 +30,9 @@ def main():
     cap = get_cap()
     print(cap)
     
+    
 def get_cap():
-    return Jar.capacity
+    return cap
 
 
 if __name__ == "__main__":
