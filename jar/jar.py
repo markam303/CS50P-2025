@@ -19,7 +19,7 @@ class Jar:
 
     @property
     def capacity(self):
-        return Jar.capacity
+        return self._capacity
 
     @property
     def size(self):
@@ -27,7 +27,8 @@ class Jar:
 
 
 def main():
-    print(Jar.capacity())
+    cap = Jar.capacity
+    print(cap)
     
 
 
