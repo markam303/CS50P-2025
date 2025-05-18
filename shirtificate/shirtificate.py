@@ -4,18 +4,18 @@ from PIL import Image
 
 class PDF(fpdf.FPDF):
     def header(self):
-        # Setting font: helvetica bold 15
-        self.set_font("helvetica", style="B", size=15)
+        # Setting font:
+        self.set_font("helvetica", style="B", size=40)
         # Moving cursor to the right:
-        #self.cell(80)
+        self.cell(80)
         # Printing title:
-        self.cell(30, 10, "CS50 Shirtificate", border=1, align="C", center=True)
+        self.cell(30, 10, "CS50 Shirtificate", align="C")
         # Performing a line break:
         self.ln(20)
 
 
 def main():
-    pdf = fpdf.FPDF()
+    pdf = PDF()
     pdf.add_page()
     """
     pdf.image("shirtificate.png",
