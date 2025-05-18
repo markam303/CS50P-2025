@@ -7,7 +7,7 @@ class PDF(fpdf.FPDF):
         # Setting font: helvetica bold 15
         self.set_font("helvetica", style="B", size=15)
         # Moving cursor to the right:
-        self.cell(80)
+        #self.cell(80)
         # Printing title:
         self.cell(30, 10, "CS50 Shirtificate", border=1, align="C")
         # Performing a line break:
