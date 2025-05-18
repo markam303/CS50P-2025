@@ -7,7 +7,11 @@ def main():
     pdf.add_page()
     background_image = Image.open("shirtificate.png")
     # pdf.allow_images_transparency = False
-    pdf.image(background_image, alt_text="CS50 T-Shirt")
+    pdf.image(background_image,
+              h=pdf.eph,
+              w=pdf.epw,
+              alt_text="CS50 T-Shirt",
+              )
     pdf.set_auto_page_break = False
     pdf.output("my-shirt.pdf")
     
