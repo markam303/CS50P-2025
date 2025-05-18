@@ -1,5 +1,5 @@
 import fpdf
-from PIL import Image
+
 
 
 class PDF(fpdf.FPDF):
@@ -17,13 +17,14 @@ class PDF(fpdf.FPDF):
 def main():
     pdf = PDF()
     pdf.add_page()
-    """
+
     pdf.image("shirtificate.png",
               h=pdf.eph,
               w=pdf.epw,
               alt_text="CS50 T-Shirt",
               keep_aspect_ratio=True,
-              ) """
+              )
+    
     pdf.set_auto_page_break = False
     pdf.output("my-shirt.pdf")
     
