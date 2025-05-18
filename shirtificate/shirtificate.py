@@ -2,6 +2,14 @@ import fpdf
 from PIL import Image
 
 
+class PDF(fpdf.FPDF):
+    def header(self):
+        # Printing title:
+        self.cell(30, 10, "Title", border=1, align="C")
+        # Performing a line break:
+        self.ln(20)
+
+
 def main():
     pdf = fpdf.FPDF()
     pdf.add_page()
