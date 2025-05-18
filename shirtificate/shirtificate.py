@@ -28,7 +28,10 @@ def main():
     pdf.set_auto_page_break = False
     pdf.output("my-shirt.pdf")
     
-...
+
+def get_name():
+    return input("What's your name? ")
+
 
 if __name__ == "__main__":
     main()
