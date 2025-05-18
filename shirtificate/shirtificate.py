@@ -6,10 +6,8 @@ class PDF(fpdf.FPDF):
     def header(self):
         # Setting font:
         self.set_font("helvetica", style="B", size=40)
-        # Moving cursor to the right:
-        self.cell(80)
         # Printing title:
-        self.cell(30, 10, "CS50 Shirtificate", align="C")
+        self.cell(0, 10, "CS50 Shirtificate", align="C")
         # Performing a line break:
         self.ln(20)
 
