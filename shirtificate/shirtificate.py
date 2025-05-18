@@ -17,9 +17,7 @@ class PDF(fpdf.FPDF):
 def main():
     pdf = fpdf.FPDF()
     pdf.add_page()
-    background_image = Image.open("shirtificate.png")
-    # pdf.allow_images_transparency = False
-    pdf.image(background_image,
+    pdf.image("shirtificate.png",
               h=pdf.eph,
               w=pdf.epw,
               alt_text="CS50 T-Shirt",
