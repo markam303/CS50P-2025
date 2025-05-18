@@ -25,8 +25,8 @@ def main():
               keep_aspect_ratio=True,
               )
     
-    pdf.set_auto_page_break = False
     pdf.output("my-shirt.pdf")
+    pdf.set_auto_page_break(False)
     
 
 def get_name():
