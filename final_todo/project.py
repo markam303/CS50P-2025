@@ -124,7 +124,7 @@ def main():
             print("Invalid input. Please enter a number.")
 
 
-def add_task(description, priority):
+def add_task(description, priority) -> bool:
     """Add new task with input validation."""
     try:
         # Validation
@@ -149,7 +149,7 @@ def add_task(description, priority):
         return False
 
 
-def mark_task_complete(task_id):
+def mark_task_complete(task_id) -> bool:
     """ "Mark task as completed with ID validation."""
     try:
         for task in tasks:
@@ -165,7 +165,7 @@ def mark_task_complete(task_id):
         return False
 
 
-def delete_task(task_id):
+def delete_task(task_id) -> bool:
     """ "Delete task with ID validation and reindexing."""
     try:
         for i, task in enumerate(tasks):
@@ -187,7 +187,7 @@ def delete_task(task_id):
         return False
 
 
-def view_tasks():
+def view_tasks() -> None:
     """ "Display tasks in formatted table."""
     if not tasks:
         print("No tasks found!")
