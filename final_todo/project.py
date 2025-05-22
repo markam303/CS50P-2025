@@ -15,7 +15,7 @@ class Task:
             raise ValueError("Invalid priority! Use: High, Medium, Low.")
 
         self.id = task_id
-        self.task_id = task_id
+       # self.task_id = task_id
         self.description = description
         self.priority = priority
         self.created = created if created else datetime.now().strftime("%Y-%m-%d")
