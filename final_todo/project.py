@@ -69,15 +69,16 @@ def main():
 
     # Welcome message with Figlet possibly
     print("\n===== Todo List =====")
-
+    
+    # Menu 
+    print("\nOptions:")
+    print("1. Add a new task")
+    print("2. View all tasks")
+    print("3. Mark as completed")
+    print("4. Delete a task")
+    print("5. Save & Exit")
+    
     while True:
-        print("\nOptions:")
-        print("1. Add a new task")
-        print("2. View all tasks")
-        print("3. Mark as completed")
-        print("4. Delete a task")
-        print("5. Save & Exit")
-
         # User's choice
         try:
             choice = int(input("What do you want to do? Enter choice (1-5): "))
