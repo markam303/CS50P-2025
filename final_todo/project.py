@@ -42,7 +42,7 @@ class Task:
     def from_dict(cls, dict):
         """Create Task object from dictionary."""
         return cls(
-            id=int(dict["id"]),
+            task_id=int(dict["id"]),
             description=dict["description"],
             priority=dict["priority"],
             created=dict["created"],
