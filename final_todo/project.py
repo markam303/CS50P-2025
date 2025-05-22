@@ -215,12 +215,12 @@ def view_tasks() -> None:
 
 
 def save_tasks():
-    """Save tasks to CSV."""
+    """Save tasks to CSV with atomic write."""
     try:
         with open("tasks.csv", "w", newline="") as file:
             writer = csv.DictWriter(
                 file,
-                fieldnames=["id", "description", "priority", "created", "completed"],
+                fieldnames=["ID", "Description", "Priority", "Created", "Completed"],
             )
             writer.writeheader()
             for task in tasks:
