@@ -21,6 +21,10 @@ class Task:
         self.created = created if created else datetime.now().strftime("%Y-%m-%d")
         self.completed = completed
 
+    def __str__(self):
+        status = "✓" if self.completed else "○"
+        return f"{status} {self.description} ({self.priority})"
+
     def mark_complete(self):
         """Mark task as completed with validation"""
         if self.completed:
