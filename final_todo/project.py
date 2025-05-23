@@ -35,26 +35,26 @@ class Task:
     def to_dict(self):
         """Convert to dictionary for CSV serialization"""
         return {
-            "Id": self.id,
-            "Description": self.description,
-            "Priority": self.priority,
-            "Created": self.created,
-            "Completed": self.completed,
+            "id": self.id,
+            "description": self.description,
+            "priority": self.priority,
+            "created": self.created,
+            "completed": self.completed,
         }
 
     @classmethod
     def from_dict(cls, dict):
         """Create Task object from dictionary."""
         # Handle boolean conversion for completed field
-        completed = dict["Completed"]
+        completed = dict["completed"]
         if isinstance(completed, str):
             completed = completed.capitalize() == "true"
             
         return cls(
-            task_id=int(dict["Id"]),
-            description=dict["Description"],
-            priority=dict["Priority"],
-            created=dict["Created"],
+            task_id=int(dict["id"]),
+            description=dict["description"],
+            priority=dict["priority"],
+            created=dict["created"],
             completed=completed,
         )
 
@@ -125,7 +125,7 @@ def delete_task(task_id: int) -> bool:
             del tasks[i]
             print(f"Task {task_id} {task.description} removed!")
 
-            # reindex ramining tasks
+            # reindex remaining tasks
             for j, task in enumerate(tasks):
                 task.id = j + 1
 
@@ -171,7 +171,7 @@ def save_tasks() -> bool:
         with open("tasks.csv", "w", newline="") as file:
             writer = csv.DictWriter(
                 file,
-                fieldnames=["Id", "Description", "Priority", "Created", "Completed"],
+                fieldnames=["id", "description", "priority", "created", "completed"],
             )
             writer.writeheader()
             for task in tasks:
