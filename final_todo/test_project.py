@@ -8,7 +8,7 @@ from project import Task, add_task, mark_task_complete, delete_task, save_tasks,
 @pytest.fixture
 def clean_tasks():
     """Clean up tasks list before and after each test."""
-    import project
+    global tasks
     project.tasks.clear()
     yield
     project.tasks.clear()
