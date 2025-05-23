@@ -214,7 +214,7 @@ def view_tasks() -> None:
     )
 
 
-def save_tasks():
+def save_tasks() -> None:
     """Save tasks to CSV with atomic write."""
     try:
         with open("tasks.csv", "w", newline="") as file:
