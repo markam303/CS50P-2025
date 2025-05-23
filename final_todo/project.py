@@ -29,7 +29,7 @@ class Task:
         return True
 
     def to_dict(self):
-        """ "Convert to dictionary for CSV serialization"""
+        """Convert to dictionary for CSV serialization"""
         return {
             "id": self.id,
             "description": self.description,
