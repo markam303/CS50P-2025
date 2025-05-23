@@ -44,13 +44,14 @@ class Task:
         # Handle boolean conversion for completed field
         completed = dict["completed"]
         if isinstance(completed, str):
-            completed = completed.lower() == 'true'
+            completed = completed.lower() 
+            completed == 'true'
         return cls(
             task_id=int(dict["id"]),
             description=dict["description"],
             priority=dict["priority"],
             created=dict["created"],
-            completed=bool(dict["completed"]),
+            completed=completed,
         )
 
 
