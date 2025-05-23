@@ -83,7 +83,7 @@ def add_task(description: str, priority) -> bool:
         )
 
         tasks.append(new_task)
-        print(f"Task added: {new_task.task_id} {new_task.description} (Priority: {new_task.priority})")
+        print(f"Task added: {new_task.id} {new_task.description} (Priority: {new_task.priority})")
         save_tasks()
         return True
 
