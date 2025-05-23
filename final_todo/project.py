@@ -48,8 +48,12 @@ class Task:
         # Handle boolean conversion for completed field
         completed = dict["completed"]
         if isinstance(completed, str):
-            completed = completed.lower() 
-            completed == 'true'
+            completed = completed.capitalize() 
+            if completed == "True":
+                completed = True
+            else:
+                completed = False
+            
         return cls(
             task_id=int(dict["id"]),
             description=dict["description"],

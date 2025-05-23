@@ -95,7 +95,7 @@ def test_task_from_dict():
     assert task.id == 2
     assert task.description == "Test task 2"
     assert task.priority == "High"
-    assert task.completed is True
+    assert task.completed == True
 
 def test_add_task():
     """Test adding tasks to the list."""
