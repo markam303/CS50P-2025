@@ -69,14 +69,14 @@ def test_task_mark_complete():
 
 def test_task_to_dict():
     """Test task dictionary conversion."""
-    task = Task(1, "Test task", "Low", "2024-01-01", True)
+    task = Task(1, "Test task", "Low", "2025-01-01", True)
     task_dict = task.to_dict()
     
     expected = {
         "id": 1,
         "description": "Test task",
         "priority": "Low",
-        "created": "2024-01-01",
+        "created": "2025-01-01",
         "completed": True
     }
     assert task_dict == expected
@@ -100,33 +100,28 @@ def test_task_from_dict():
 def test_add_task():
     """Test adding tasks to the list."""
     # Test successful addition
-    result = project.add_task("Test task", "High")
-    assert result is True
+    assert project.add_task("Test task", "High") == True
     assert len(project.tasks) == 1
     assert project.tasks[0].description == "Test task"
     assert project.tasks[0].priority == "High"
     
     # Test numeric priority conversion
-    result = project.add_task("Test task 2", 2)
-    assert result is True
+    assert project.add_task("Test task 2", 2) == True
     assert len(project.tasks) == 2
     assert project.tasks[1].priority == "Medium"
 
 def test_add_task_validation():
     """Test add_task input validation."""
     # Test empty description
-    result = project.add_task("", "High")
-    assert result is False
+    assert project.add_task("", "High") == False
     assert len(project.tasks) == 0
     
     # Test whitespace-only description
-    result = project.add_task("   ", "High")
-    assert result is False
+    assert project.add_task("   ", "High") == False
     assert len(project.tasks) == 0
     
     # Test invalid numeric priority
-    result = project.add_task("Test task", 5)
-    assert result is False
+    assert project.add_task("Test task", 5) == False
     assert len(project.tasks) == 0
 
 def test_mark_task_complete():
@@ -136,22 +131,19 @@ def test_mark_task_complete():
     project.add_task("Task 2", "Medium")
     
     # Test successful completion
-    result = project.mark_task_complete(1)
-    assert result is True
+    assert project.mark_task_complete(1) == True
     assert project.tasks[0].completed is True
     
     # Test completing already completed task
-    result = project.mark_task_complete(1)
-    assert result is False
+    assert project.mark_task_complete(1) == False
     
     # Test invalid task ID
-    result = project.mark_task_complete(99)
-    assert result is False
+    assert project.mark_task_complete(99) == False
+    
 
 def test_mark_task_complete_empty_list():
     """Test marking task complete when no tasks exist."""
-    result = project.mark_task_complete(1)
-    assert result is False
+    assert project.mark_task_complete(1) == False
 
 def test_delete_task():
     """Test deleting tasks."""
@@ -161,8 +153,7 @@ def test_delete_task():
     project.add_task("Task 3", "Low")
     
     # Delete middle task
-    result = project.delete_task(2)
-    assert result is True
+    assert project.delete_task(2) == True
     assert len(project.tasks) == 2
     
     # Check ID reindexing
@@ -172,20 +163,19 @@ def test_delete_task():
     assert project.tasks[1].description == "Task 3"
     
     # Test invalid task ID
-    result = project.delete_task(99)
-    assert result is False
+    assert project.delete_task(99) == False
+    
 
 def test_delete_task_empty_list():
     """Test deleting task when no tasks exist."""
-    result = project.delete_task(1)
-    assert result is False
+    assert project.delete_task(1) == False
 
 def test_save_and_load_tasks():
     """Test saving and loading tasks with actual CSV file."""
     # Backup original CSV if it exists
     backup_file = None
     if os.path.exists("tasks.csv"):
-        with open("tasks.csv", "r") as f:
+        with open("tasks.csv", "r") as file:
             backup_content = f.read()
         backup_file = "tasks_backup.csv"
         with open(backup_file, "w") as f:
