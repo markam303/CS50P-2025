@@ -159,7 +159,7 @@ def view_tasks() -> None:
     print(
         tabulate(
             table_data,
-            headers=["ID", "Description", "Priority", "Created", "Status"],
+            headers=["Id", "Description", "Priority", "Created", "Status"],
             tablefmt="grid",
         )
     )
@@ -171,7 +171,7 @@ def save_tasks() -> bool:
         with open("tasks.csv", "w", newline="") as file:
             writer = csv.DictWriter(
                 file,
-                fieldnames=["ID", "Description", "Priority", "Created", "Completed"],
+                fieldnames=["Id", "Description", "Priority", "Created", "Completed"],
             )
             writer.writeheader()
             for task in tasks:
