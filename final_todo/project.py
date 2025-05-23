@@ -231,7 +231,7 @@ def save_tasks() -> None:
         return False
 
 
-def load_tasks():
+def load_tasks() -> bool:
     """Load tasks from CSV, error handling included."""
     global tasks
     tasks = []
