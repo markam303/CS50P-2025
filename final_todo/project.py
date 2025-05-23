@@ -43,18 +43,18 @@ class Task:
         }
 
     @classmethod
-    def from_dict(cls, dict):
+    def from_dict(cls, task_dict):
         """Create Task object from dictionary."""
         # Handle boolean conversion for completed field
-        completed = dict["completed"]
+        completed = task_dict["completed"]
         if isinstance(completed, str):
             completed = completed.lower() == "true"
 
         return cls(
-            task_id=int(dict["id"]),
-            description=dict["description"],
-            priority=dict["priority"],
-            created=dict["created"],
+            task_id=int(task_dict["id"]),
+            description=task_dict["description"],
+            priority=task_dict["priority"],
+            created=task_dict["created"],
             completed=completed,
         )
 
@@ -203,15 +203,7 @@ def load_tasks() -> bool:
 
 
 def main():
-    """Run todo list application with menu system.
-    Options:
-    1. Add a new task
-    2. View all tasks
-    3. Mark as complete
-    4. Delete a task
-    5. Save & Exit
-    Select number to proceed.
-    """
+    """Main application entry point with interactive menu."""
     # Initialize tasks
     load_tasks()
 
