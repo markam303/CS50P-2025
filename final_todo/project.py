@@ -12,17 +12,16 @@ class Task:
         if not description or not description.strip():
             raise ValueError("Missing task describtion!")
         
-        if not isinstance(priority, str) or priority not in ["High", "Medium", "Low"]:
+        if priority not in ["High", "Medium", "Low"]:
             raise ValueError("Invalid priority! Use: High, Medium, Low.")
 
         self.id = task_id
-       # self.task_id = task_id
-        self.description = description
+        self.description = description.strip()
         self.priority = priority
         self.created = created if created else datetime.now().strftime("%Y-%m-%d")
         self.completed = completed
 
-    def mark_completed(self):
+    def mark_complete(self):
         """Mark task as completed with validation"""
         if self.completed:
             raise ValueError(f"Task {self.id} is already completed!")
