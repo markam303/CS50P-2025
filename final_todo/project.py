@@ -87,7 +87,7 @@ def add_task(description: str, priority) -> bool:
         save_tasks()
         return True
 
-    except Exception as e:
+    except ValueError as e:
         print(f"Error adding task: {e}")
         return False
 
