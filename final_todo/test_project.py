@@ -61,13 +61,11 @@ def test_task_mark_complete():
     task = Task(1, "Test task", "Medium")
     
     # First completion should succeed
-    result = task.mark_complete()
-    assert result is True
-    assert task.completed is True
+    assert task.mark_complete() == True
+    assert task.completed == True
     
     # Second completion should return False (already completed)
-    result = task.mark_complete()
-    assert result is False
+    assert task.mark_complete() == False
 
 def test_task_to_dict():
     """Test task dictionary conversion."""
