@@ -46,7 +46,7 @@ class Task:
     def from_dict(cls, dict):
         """Create Task object from dictionary."""
         # Handle boolean conversion for completed field
-        completed = dict["completed"]
+        completed = dict["Completed"]
         if isinstance(completed, str):
             completed = completed.capitalize() 
             if completed == "True":
@@ -55,10 +55,10 @@ class Task:
                 completed = False
             
         return cls(
-            task_id=int(dict["id"]),
-            description=dict["description"],
-            priority=dict["priority"],
-            created=dict["created"],
+            task_id=int(dict["Id"]),
+            description=dict["Description"],
+            priority=dict["Priority"],
+            created=dict["Created"],
             completed=completed,
         )
 

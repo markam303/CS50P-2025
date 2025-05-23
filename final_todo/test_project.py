@@ -58,22 +58,22 @@ def test_task_to_dict():
     task_dict = task.to_dict()
     
     expected = {
-        "id": 1,
-        "description": "Test task",
-        "priority": "Low",
-        "created": "2025-01-01",
-        "completed": True
+        "Id": 1,
+        "Description": "Test task",
+        "Priority": "Low",
+        "Created": "2025-01-01",
+        "Completed": True
     }
     assert task_dict == expected
 
 def test_task_from_dict():
     """Test creating task from dictionary."""
     task_dict = {
-        "id": "2",
-        "description": "Test task 2",
-        "priority": "High",
-        "created": "2024-01-01",
-        "completed": "true"
+        "Id": "2",
+        "Description": "Test task 2",
+        "Priority": "High",
+        "Created": "2025-01-01",
+        "Completed": "True"
     }
     
     task = Task.from_dict(task_dict)
