@@ -10,10 +10,10 @@ class Task:
     def __init__(self, task_id, description, priority, created=None, completed=False):
         """Initialize task properties with validation."""
         if not description or not description.strip():
-            raise ValueError("Missing task description!")
+            raise ValueError("Error: missing task description")
 
         if priority not in ["High", "Medium", "Low"]:
-            raise ValueError("Invalid priority! Use: High, Medium, Low.")
+            raise ValueError("Invalid priority. Use: High, Medium, Low.")
 
         self.id = task_id
         self.description = description.strip()
@@ -98,7 +98,7 @@ def add_task(description: str, priority) -> bool:
 def mark_task_complete(task_id: int) -> bool:
     """Mark task as completed with ID validation."""
     if not tasks:
-        print("No tasks found!")
+        print("Error: No tasks found")
         return False
 
     # Find and mark task
@@ -112,9 +112,6 @@ def mark_task_complete(task_id: int) -> bool:
                 print(f"Task {task_id} completed!")
                 save_tasks()
                 return True
-
-    print(f"Error: No task found!")
-    return False
 
 
 def delete_task(task_id: int) -> bool:
@@ -142,7 +139,7 @@ def delete_task(task_id: int) -> bool:
 def view_tasks() -> None:
     """Display all tasks in formatted table."""
     if not tasks:
-        print("No tasks found!")
+        print("Error: no tasks found")
         return
 
     table_data = [
