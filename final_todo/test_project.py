@@ -62,7 +62,7 @@ def test_task_to_dict():
         "description": "Test task",
         "priority": "Low",
         "created": "2025-01-01",
-        "completed": "True"
+        "completed": True
     }
     assert task_dict == expected
 
@@ -73,7 +73,7 @@ def test_task_from_dict():
         "description": "Test task 2",
         "priority": "High",
         "created": "2025-01-01",
-        "completed": "True"
+        "completed": True
     }
     
     task = Task.from_dict(task_dict)
