@@ -101,34 +101,40 @@ def mark_task_complete(task_id: int) -> bool:
     # Find and mark task
     for task in tasks:
         if task.id == task_id:
-            task.mark_complete()
-            print(f"Task {task_id} completed")
-            save_tasks()
-            return True
-    raise ValueError(f"No task found with ID {task_id}")
-
-
+            if task.completed:
+                print(f"Task {task_id} is already marked as completed.")
+                return False
+            else:
+                task.mark_complete()
+                print(f"Task {task_id} completed!")
+                save_tasks()
+                return True
+    
+    print(f"Error: No task found!")
+    return False
+    
 
 def delete_task(task_id: int) -> bool:
     """ "Delete task with ID validation and reindexing."""
-    try:
-        for i, task in enumerate(tasks):
-            if task.id == task_id:
-                del tasks[i]
-                print(f"Task {task_id} removed!")
-
-                # reindex ramining tasks
-                for j, task in enumerate(tasks):
-                    task.id = j + 1
-
-                save_tasks()
-                return True
-
-        raise ValueError(f"No task found with ID {task_id}")
-
-    except Exception as e:
-        print(f"Error: {e}")
+    if not tasks:
+        print("No tasks to delete!")
         return False
+    
+
+    for i, task in enumerate(tasks):
+        if task.id == task_id:
+            deleted_task = tasks.pop[i]
+            print(f"Task {task_id} {deleted_task.description} removed!")
+
+            # reindex ramining tasks
+            for j, task in enumerate(tasks):
+                task.id = j + 1
+
+            save_tasks()
+            return True
+
+    print(f"No task found with ID {task_id}")
+    return False
 
 
 def view_tasks() -> None:
