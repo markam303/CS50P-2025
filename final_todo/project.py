@@ -41,6 +41,10 @@ class Task:
     @classmethod
     def from_dict(cls, dict):
         """Create Task object from dictionary."""
+        # Handle boolean conversion for completed field
+        completed = dict["completed"]
+        if isinstance(completed, str):
+            completed = completed.lower() == 'true'
         return cls(
             task_id=int(dict["id"]),
             description=dict["description"],
