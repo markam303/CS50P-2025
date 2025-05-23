@@ -127,8 +127,8 @@ def delete_task(task_id: int) -> bool:
 
     for i, task in enumerate(tasks):
         if task.id == task_id:
-            deleted_task = tasks.pop[i]
-            print(f"Task {task_id} {deleted_task.description} removed!")
+            deleted_task =  task[i].pop()
+            print(f"Task {task_id} {task.description} removed!")
 
             # reindex ramining tasks
             for j, task in enumerate(tasks):
