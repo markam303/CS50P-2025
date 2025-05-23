@@ -204,6 +204,7 @@ def load_tasks() -> bool:
         print(f"Error loading tasks: {e}")
         return False
 
+
 def main():
     """Run todo list application with menu system.
     Options:
