@@ -123,7 +123,6 @@ def delete_task(task_id: int) -> bool:
     if not tasks:
         print("No tasks to delete!")
         return False
-    
 
     for i, task in enumerate(tasks):
         if task.id == task_id:
