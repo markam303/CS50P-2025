@@ -70,6 +70,8 @@ def add_task(description: str, priority) -> bool:
     
     if isinstance(priority, int):
         priority_map = {1: "High", 2: "Medium", 3: "Low"}
+        if priority not in priority_map:
+            return False
         priority = priority_map.get(priority, "Medium")
 
     try:
