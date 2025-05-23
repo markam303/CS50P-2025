@@ -159,7 +159,7 @@ def view_tasks() -> None:
     print(
         tabulate(
             table_data,
-            headers=["Id", "Description", "Priority", "Created", "Status"],
+            headers=["id", "description", "priority", "created", "status"],
             tablefmt="grid",
         )
     )
@@ -217,7 +217,7 @@ def main():
 
     # Welcome message with Figlet possibly
     print("\n" + ("=" * 50))
-    print("\n===== Todo List =====")
+    print("===== Todo List =====")
     print("=" * 50)
     print(f"\nLoaded {len(tasks)} existing tasks.")
     
