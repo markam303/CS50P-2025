@@ -165,7 +165,7 @@ def view_tasks() -> None:
     )
 
 
-def save_tasks() -> None:
+def save_tasks() -> bool:
     """Save tasks to CSV with atomic write."""
     try:
         with open("tasks.csv", "w", newline="") as file:
@@ -177,6 +177,7 @@ def save_tasks() -> None:
             for task in tasks:
                 writer.writerow(task.to_dict())
         return True
+    
     except Exception as e:
         print(f"Error saving tasks: {e}")
         return False
