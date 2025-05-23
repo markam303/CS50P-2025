@@ -11,7 +11,7 @@ class Task:
         """ "Initialize task properties with validation."""
         if not description or not description.strip():
             raise ValueError("Missing task description!")
-        
+
         if priority not in ["High", "Medium", "Low"]:
             raise ValueError("Invalid priority! Use: High, Medium, Low.")
 
@@ -49,7 +49,7 @@ class Task:
         completed = dict["completed"]
         if isinstance(completed, str):
             completed = completed.capitalize() == "true"
-            
+
         return cls(
             task_id=int(dict["id"]),
             description=dict["description"],
@@ -62,12 +62,13 @@ class Task:
 # Global tasks list
 tasks = []
 
+
 def add_task(description: str, priority) -> bool:
     """Add new task with input validation."""
     # Validation
-    #if not description or not description.strip():
+    # if not description or not description.strip():
     #    return False
-    
+
     if isinstance(priority, int):
         priority_map = {1: "High", 2: "Medium", 3: "Low"}
         if priority not in priority_map:
@@ -83,7 +84,9 @@ def add_task(description: str, priority) -> bool:
         )
 
         tasks.append(new_task)
-        print(f"Task added: {new_task.id} {new_task.description} (Priority: {new_task.priority})")
+        print(
+            f"Task added: {new_task.id} {new_task.description} (Priority: {new_task.priority})"
+        )
         save_tasks()
         return True
 
@@ -97,7 +100,7 @@ def mark_task_complete(task_id: int) -> bool:
     if not tasks:
         print("No tasks found!")
         return False
-    
+
     # Find and mark task
     for task in tasks:
         if task.id == task_id:
@@ -109,10 +112,10 @@ def mark_task_complete(task_id: int) -> bool:
                 print(f"Task {task_id} completed!")
                 save_tasks()
                 return True
-    
+
     print(f"Error: No task found!")
     return False
-    
+
 
 def delete_task(task_id: int) -> bool:
     """ "Delete task with ID validation and reindexing."""
@@ -177,7 +180,7 @@ def save_tasks() -> bool:
             for task in tasks:
                 writer.writerow(task.to_dict())
         return True
-    
+
     except Exception as e:
         print(f"Error saving tasks: {e}")
         return False
@@ -220,15 +223,15 @@ def main():
     print("===== Todo List =====")
     print("=" * 50)
     print(f"\nLoaded {len(tasks)} existing tasks.")
-    
-    # Menu 
+
+    # Menu
     print("\nOptions:")
     print("1. Add a new task")
     print("2. View all tasks")
     print("3. Mark as completed")
     print("4. Delete a task")
     print("5. Save & Exit")
-    
+
     while True:
         # User's choice
         try:
@@ -241,7 +244,7 @@ def main():
                 print("1. High")
                 print("2. Medium")
                 print("3. Low")
-                
+
                 while True:
                     try:
                         priority = int(input("Enter priority (1-3): "))
@@ -280,7 +283,6 @@ def main():
         # Catching exceptions
         except ValueError:
             print("Invalid input. Please enter a number.")
-
 
 
 if __name__ == "__main__":
