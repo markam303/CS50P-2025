@@ -64,12 +64,15 @@ tasks = []
 
 def add_task(description: str, priority) -> bool:
     """Add new task with input validation."""
-    try:
-        # Validation
-        if isinstance(priority, int):
-            priority_map = {1: "High", 2: "Medium", 3: "Low"}
-            priority = priority_map.get(priority, "Medium")
+    # Validation
+    if not description or not description.strip():
+        return False
+    
+    if isinstance(priority, int):
+        priority_map = {1: "High", 2: "Medium", 3: "Low"}
+        priority = priority_map.get(priority, "Medium")
 
+    try:
         # Create new Task obj
         new_task = Task(
             task_id=len(tasks) + 1,
