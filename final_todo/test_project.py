@@ -176,10 +176,10 @@ def test_save_and_load_tasks():
     backup_file = None
     if os.path.exists("tasks.csv"):
         with open("tasks.csv", "r") as file:
-            backup_content = f.read()
+            backup_content = file.read()
         backup_file = "tasks_backup.csv"
-        with open(backup_file, "w") as f:
-            f.write(backup_content)
+        with open(backup_file, "w") as file:
+            file.write(backup_content)
         os.unlink("tasks.csv")
     
     try:
