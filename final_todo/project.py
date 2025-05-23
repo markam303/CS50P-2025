@@ -219,7 +219,10 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
+    print("\n" + ("=" * 50))
     print("\n===== Todo List =====")
+    print("=" * 50)
+    print(f"\nLoaded {len(tasks)} existing tasks.")
     
     # Menu 
     print("\nOptions:")
@@ -232,7 +235,7 @@ def main():
     while True:
         # User's choice
         try:
-            choice = int(input("What do you want to do? Enter choice (1-5): "))
+            choice = int(input("\nWhat do you want to do? Enter choice (1-5): "))
 
             # Add task
             if choice == 1:
