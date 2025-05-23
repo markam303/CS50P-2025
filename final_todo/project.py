@@ -124,7 +124,7 @@ def main():
             print("Invalid input. Please enter a number.")
 
 
-def add_task(description: str, priority: str/int) -> bool:
+def add_task(description: str, priority) -> bool:
     """Add new task with input validation."""
     try:
         # Validation
