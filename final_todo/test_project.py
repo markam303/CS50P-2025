@@ -1,7 +1,5 @@
 import pytest
 import os
-import csv
-import tempfile
 import project
 from project import Task
 
@@ -18,19 +16,6 @@ def clean_tasks():
     # Restore original tasks
     project.tasks.clear()
     project.tasks.extend(original_tasks)
-
-# @pytest.fixture
-# def temp_csv_file():
-#     """Create and cleanup temporary CSV file."""
-#     # Create temporary file
-#     temp_fd, temp_path = tempfile.mkstemp(suffix='.csv')
-#     os.close(temp_fd)  # Close file descriptor
-    
-#     yield temp_path
-    
-#     # Cleanup
-#     if os.path.exists(temp_path):
-#         os.unlink(temp_path)
 
 def test_task_creation():
     """Test basic Task object creation."""
