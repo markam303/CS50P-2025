@@ -189,19 +189,17 @@ def test_save_and_load_tasks():
         project.tasks[0].mark_complete()
         
         # Test save
-        result = project.save_tasks()
-        assert result is True
+        assert project.save_tasks() == True
         assert os.path.exists("tasks.csv")
         
         # Clear tasks and test load
         project.tasks.clear()
-        result = project.load_tasks()
-        assert result is True
+        assert project.load_tasks() == True
         assert len(project.tasks) == 2
         assert project.tasks[0].description == "Task 1"
-        assert project.tasks[0].completed is True
+        assert project.tasks[0].completed == True
         assert project.tasks[1].description == "Task 2"
-        assert project.tasks[1].completed is False
+        assert project.tasks[1].completed == False
         
     finally:
         # Cleanup test file
@@ -220,8 +218,7 @@ def test_load_nonexistent_file():
         os.rename("tasks.csv", "tasks_temp_backup.csv")
     
     try:
-        result = project.load_tasks()
-        assert result is False
+        assert project.load_tasks() == False
         assert len(project.tasks) == 0
     finally:
         # Restore backup if it existed
