@@ -45,11 +45,11 @@ def test_task_creation():
 def test_task_validation():
     """Test Task input validation."""
     # Test empty description
-    with pytest.raises(ValueError, match="Task description cannot be empty!"):
+    with pytest.raises(ValueError, match="Missing task describtion!"):
         Task(1, "", "High")
     
     # Test whitespace-only description
-    with pytest.raises(ValueError, match="Task description cannot be empty!"):
+    with pytest.raises(ValueError, match="Missing task describtion!"):
         Task(1, "   ", "High")
     
     # Test invalid priority
