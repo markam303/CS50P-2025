@@ -94,18 +94,19 @@ def add_task(description: str, priority) -> bool:
 
 def mark_task_complete(task_id: int) -> bool:
     """ "Mark task as completed with ID validation."""
-    try:
-        for task in tasks:
-            if task.id == task_id:
-                task.mark_complete()
-                print(f"Task {task_id} completed")
-                save_tasks()
-                return True
-        raise ValueError(f"No task found with ID {task_id}")
-
-    except Exception as e:
-        print(f"Error: {e}")
+    if not tasks:
+        print("No tasks found!")
         return False
+    
+    # Find and mark task
+    for task in tasks:
+        if task.id == task_id:
+            task.mark_complete()
+            print(f"Task {task_id} completed")
+            save_tasks()
+            return True
+    raise ValueError(f"No task found with ID {task_id}")
+
 
 
 def delete_task(task_id: int) -> bool:
