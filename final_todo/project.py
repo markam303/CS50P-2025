@@ -24,7 +24,7 @@ class Task:
     def mark_complete(self):
         """Mark task as completed with validation"""
         if self.completed:
-            raise ValueError(f"Task {self.id} is already completed!")
+            return False
         self.completed = True
         return True
 
