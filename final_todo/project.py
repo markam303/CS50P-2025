@@ -91,6 +91,7 @@ def main():
                 print("2. Medium")
                 print("3. Low")
                 priority = int(input("Enter priority (1-3): "))
+                assert 1 <= priority <= 3
                 add_task(desc, priority)
 
             # View all tasks
