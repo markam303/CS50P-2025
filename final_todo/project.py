@@ -239,7 +239,7 @@ def main():
 
             # Add task
             if choice == 1:
-                desc = input("Enter task description: ")
+                description = input("Enter task description: ")
                 print("\nPriority Options:")
                 print("1. High")
                 print("2. Medium")
@@ -249,7 +249,7 @@ def main():
                     assert 1 <= priority <= 3
                 except (ValueError, AssertionError):
                     print("Invalid priority")
-                add_task(desc, priority)
+                add_task(description, priority)
 
             # View all tasks
             elif choice == 2:
