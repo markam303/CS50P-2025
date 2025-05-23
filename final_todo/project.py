@@ -8,7 +8,7 @@ class Task:
     """Represents a single task with OOP encapsulation."""
 
     def __init__(self, task_id, description, priority, created=None, completed=False):
-        """ "Initialize task properties with validation."""
+        """Initialize task properties with validation."""
         if not description or not description.strip():
             raise ValueError("Missing task description!")
 
@@ -48,7 +48,7 @@ class Task:
         # Handle boolean conversion for completed field
         completed = dict["completed"]
         if isinstance(completed, str):
-            completed = completed.capitalize() == "true"
+            completed = completed.lower() == "true"
 
         return cls(
             task_id=int(dict["id"]),
@@ -73,7 +73,7 @@ def add_task(description: str, priority) -> bool:
         priority_map = {1: "High", 2: "Medium", 3: "Low"}
         if priority not in priority_map:
             return False
-        priority = priority_map.get(priority, "Medium")
+        priority = priority_map[priority]
 
     try:
         # Create new Task obj
@@ -118,7 +118,7 @@ def mark_task_complete(task_id: int) -> bool:
 
 
 def delete_task(task_id: int) -> bool:
-    """ "Delete task with ID validation and reindexing."""
+    """Delete task with ID validation and reindexing."""
     if not tasks:
         print("No tasks to delete!")
         return False
@@ -140,7 +140,7 @@ def delete_task(task_id: int) -> bool:
 
 
 def view_tasks() -> None:
-    """ "Display all tasks in formatted table."""
+    """Display all tasks in formatted table."""
     if not tasks:
         print("No tasks found!")
         return
