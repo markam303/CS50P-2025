@@ -90,8 +90,11 @@ def main():
                 print("1. High")
                 print("2. Medium")
                 print("3. Low")
-                priority = int(input("Enter priority (1-3): "))
-                assert 1 <= priority <= 3
+                try:
+                    priority = int(input("Enter priority (1-3): "))
+                    assert 1 <= priority <= 3
+                except (ValueError, AssertionError):
+                    print("Invalid priority")
                 add_task(desc, priority)
 
             # View all tasks
