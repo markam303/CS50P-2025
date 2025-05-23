@@ -131,7 +131,7 @@ def delete_task(task_id: int) -> bool:
 
 
 def view_tasks() -> None:
-    """ "Display tasks in formatted table."""
+    """ "Display all tasks in formatted table."""
     if not tasks:
         print("No tasks found!")
         return
