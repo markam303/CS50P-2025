@@ -62,81 +62,6 @@ class Task:
 # Global tasks list
 tasks = []
 
-
-def main():
-    """Run todo list application with menu system.
-    Options:
-    1. Add a new task
-    2. View all tasks
-    3. Mark as complete
-    4. Delete a task
-    5. Save & Exit
-    Select number to proceed.
-    """
-    # Initialize tasks
-    load_tasks()
-
-    # Welcome message with Figlet possibly
-    print("\n===== Todo List =====")
-    
-    # Menu 
-    print("\nOptions:")
-    print("1. Add a new task")
-    print("2. View all tasks")
-    print("3. Mark as completed")
-    print("4. Delete a task")
-    print("5. Save & Exit")
-    
-    while True:
-        # User's choice
-        try:
-            choice = int(input("What do you want to do? Enter choice (1-5): "))
-
-            # Add task
-            if choice == 1:
-                desc = input("Enter task description: ")
-                print("\nPriority Options:")
-                print("1. High")
-                print("2. Medium")
-                print("3. Low")
-                try:
-                    priority = int(input("Enter priority (1-3): "))
-                    assert 1 <= priority <= 3
-                except (ValueError, AssertionError):
-                    print("Invalid priority")
-                add_task(desc, priority)
-
-            # View all tasks
-            elif choice == 2:
-                view_tasks()
-
-            # Mark as complete
-            elif choice == 3:
-                view_tasks()
-                task_id = int(input("Enter task ID to mark as completed: "))
-                mark_task_complete(task_id)
-
-            # Delete tasks
-            elif choice == 4:
-                view_tasks()
-                task_id = int(input("Enter task ID to delete: "))
-                delete_task(task_id)
-
-            # Exit program
-            elif choice == 5:
-                save_tasks()
-                print("Thanks you for using Todo. Goodbye!")
-                break
-
-            # Wrong choice, try again
-            else:
-                print("Invalid choice. Try again.")
-
-        # Catching exceptions
-        except ValueError:
-            print("Invalid input. Please enter a number.")
-
-
 def add_task(description: str, priority) -> bool:
     """Add new task with input validation."""
     try:
@@ -261,6 +186,80 @@ def load_tasks() -> bool:
     except Exception as e:
         print(f"Error loading tasks: {e}")
         return False
+
+def main():
+    """Run todo list application with menu system.
+    Options:
+    1. Add a new task
+    2. View all tasks
+    3. Mark as complete
+    4. Delete a task
+    5. Save & Exit
+    Select number to proceed.
+    """
+    # Initialize tasks
+    load_tasks()
+
+    # Welcome message with Figlet possibly
+    print("\n===== Todo List =====")
+    
+    # Menu 
+    print("\nOptions:")
+    print("1. Add a new task")
+    print("2. View all tasks")
+    print("3. Mark as completed")
+    print("4. Delete a task")
+    print("5. Save & Exit")
+    
+    while True:
+        # User's choice
+        try:
+            choice = int(input("What do you want to do? Enter choice (1-5): "))
+
+            # Add task
+            if choice == 1:
+                desc = input("Enter task description: ")
+                print("\nPriority Options:")
+                print("1. High")
+                print("2. Medium")
+                print("3. Low")
+                try:
+                    priority = int(input("Enter priority (1-3): "))
+                    assert 1 <= priority <= 3
+                except (ValueError, AssertionError):
+                    print("Invalid priority")
+                add_task(desc, priority)
+
+            # View all tasks
+            elif choice == 2:
+                view_tasks()
+
+            # Mark as complete
+            elif choice == 3:
+                view_tasks()
+                task_id = int(input("Enter task ID to mark as completed: "))
+                mark_task_complete(task_id)
+
+            # Delete tasks
+            elif choice == 4:
+                view_tasks()
+                task_id = int(input("Enter task ID to delete: "))
+                delete_task(task_id)
+
+            # Exit program
+            elif choice == 5:
+                save_tasks()
+                print("Thanks you for using Todo. Goodbye!")
+                break
+
+            # Wrong choice, try again
+            else:
+                print("Invalid choice. Try again.")
+
+        # Catching exceptions
+        except ValueError:
+            print("Invalid input. Please enter a number.")
+
 
 
 if __name__ == "__main__":
