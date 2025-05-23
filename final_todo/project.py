@@ -35,11 +35,11 @@ class Task:
     def to_dict(self):
         """Convert to dictionary for CSV serialization"""
         return {
-            "id": self.id,
-            "description": self.description,
-            "priority": self.priority,
-            "created": self.created,
-            "completed": self.completed,
+            "Id": self.id,
+            "Description": self.description,
+            "Priority": self.priority,
+            "Created": self.created,
+            "Completed": self.completed,
         }
 
     @classmethod
