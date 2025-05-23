@@ -124,7 +124,7 @@ def main():
             print("Invalid input. Please enter a number.")
 
 
-def add_task(description, priority) -> bool:
+def add_task(description: str, priority: str/int) -> bool:
     """Add new task with input validation."""
     try:
         # Validation
@@ -149,7 +149,7 @@ def add_task(description, priority) -> bool:
         return False
 
 
-def mark_task_complete(task_id) -> bool:
+def mark_task_complete(task_id: int) -> bool:
     """ "Mark task as completed with ID validation."""
     try:
         for task in tasks:
@@ -165,7 +165,7 @@ def mark_task_complete(task_id) -> bool:
         return False
 
 
-def delete_task(task_id) -> bool:
+def delete_task(task_id: int) -> bool:
     """ "Delete task with ID validation and reindexing."""
     try:
         for i, task in enumerate(tasks):
