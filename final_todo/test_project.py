@@ -2,26 +2,35 @@ import pytest
 import os
 import csv
 import tempfile
-from project import Task, add_task, mark_task_complete, delete_task, save_tasks, load_tasks, tasks
+import project
+from project import Task
 
 # Fixtures for testing
-@pytest.fixture
+@pytest.fixture(autouse=True)
 def clean_tasks():
     """Clean up tasks list before and after each test."""
-    global tasks
+    # Store original tasks
+    original_tasks = project.tasks.copy()
     project.tasks.clear()
+    
     yield
+    
+    # Restore original tasks
     project.tasks.clear()
+    project.tasks.extend(original_tasks)
 
 @pytest.fixture
-def temp_csv():
-    """Create temporary CSV file for testing."""
-    with tempfile.NamedTemporaryFile(mode='w', suffix='.csv', delete=False) as f:
-        temp_file = f.name
-    yield temp_file
+def temp_csv_file():
+    """Create and cleanup temporary CSV file."""
+    # Create temporary file
+    temp_fd, temp_path = tempfile.mkstemp(suffix='.csv')
+    os.close(temp_fd)  # Close file descriptor
+    
+    yield temp_path
+    
     # Cleanup
-    if os.path.exists(temp_file):
-        os.unlink(temp_file)
+    if os.path.exists(temp_path):
+        os.unlink(temp_path)
 
 def test_task_creation():
     """Test basic Task object creation."""
@@ -38,6 +47,10 @@ def test_task_validation():
     # Test empty description
     with pytest.raises(ValueError, match="Task description cannot be empty"):
         Task(1, "", "High")
+    
+    # Test whitespace-only description
+    with pytest.raises(ValueError, match="Task description cannot be empty"):
+        Task(1, "   ", "High")
     
     # Test invalid priority
     with pytest.raises(ValueError, match="Priority must be"):
@@ -86,120 +99,155 @@ def test_task_from_dict():
     assert task.priority == "High"
     assert task.completed is True
 
-def test_add_task(clean_tasks):
+def test_add_task():
     """Test adding tasks to the list."""
-    import project
-    
     # Test successful addition
-    result = add_task("Test task", "High")
+    result = project.add_task("Test task", "High")
     assert result is True
     assert len(project.tasks) == 1
     assert project.tasks[0].description == "Test task"
     assert project.tasks[0].priority == "High"
     
     # Test numeric priority conversion
-    result = add_task("Test task 2", 2)
+    result = project.add_task("Test task 2", 2)
     assert result is True
     assert len(project.tasks) == 2
     assert project.tasks[1].priority == "Medium"
 
-def test_add_task_validation(clean_tasks):
+def test_add_task_validation():
     """Test add_task input validation."""
-    import project
-    
     # Test empty description
-    result = add_task("", "High")
+    result = project.add_task("", "High")
+    assert result is False
+    assert len(project.tasks) == 0
+    
+    # Test whitespace-only description
+    result = project.add_task("   ", "High")
     assert result is False
     assert len(project.tasks) == 0
     
     # Test invalid numeric priority
-    result = add_task("Test task", 5)
+    result = project.add_task("Test task", 5)
     assert result is False
     assert len(project.tasks) == 0
 
-def test_mark_task_complete(clean_tasks):
+def test_mark_task_complete():
     """Test marking tasks as complete."""
-    import project
-    
     # Add test tasks
-    add_task("Task 1", "High")
-    add_task("Task 2", "Medium")
+    project.add_task("Task 1", "High")
+    project.add_task("Task 2", "Medium")
     
     # Test successful completion
-    result = mark_task_complete(1)
+    result = project.mark_task_complete(1)
     assert result is True
     assert project.tasks[0].completed is True
     
     # Test completing already completed task
-    result = mark_task_complete(1)
+    result = project.mark_task_complete(1)
     assert result is False
     
     # Test invalid task ID
-    result = mark_task_complete(99)
+    result = project.mark_task_complete(99)
     assert result is False
 
-def test_delete_task(clean_tasks):
+def test_mark_task_complete_empty_list():
+    """Test marking task complete when no tasks exist."""
+    result = project.mark_task_complete(1)
+    assert result is False
+
+def test_delete_task():
     """Test deleting tasks."""
-    import project
-    
     # Add test tasks
-    add_task("Task 1", "High")
-    add_task("Task 2", "Medium")
-    add_task("Task 3", "Low")
+    project.add_task("Task 1", "High")
+    project.add_task("Task 2", "Medium")
+    project.add_task("Task 3", "Low")
     
     # Delete middle task
-    result = delete_task(2)
+    result = project.delete_task(2)
     assert result is True
     assert len(project.tasks) == 2
     
     # Check ID reindexing
     assert project.tasks[0].id == 1
+    assert project.tasks[0].description == "Task 1"
     assert project.tasks[1].id == 2
     assert project.tasks[1].description == "Task 3"
     
     # Test invalid task ID
-    result = delete_task(99)
+    result = project.delete_task(99)
     assert result is False
 
-def test_save_load_tasks(clean_tasks, temp_csv):
-    """Test saving and loading tasks."""
-    import project
-    
-    # Set temporary file path
-    original_filename = "tasks.csv"
-    
-    # Add test tasks
-    add_task("Task 1", "High")
-    add_task("Task 2", "Medium")
-    project.tasks[0].mark_complete()
-    
-    # Test save
-    result = save_tasks()
-    assert result is True
-    assert os.path.exists("tasks.csv")
-    
-    # Clear tasks and test load
-    project.tasks.clear()
-    result = load_tasks()
-    assert result is True
-    assert len(project.tasks) == 2
-    assert project.tasks[0].description == "Task 1"
-    assert project.tasks[0].completed is True
-    assert project.tasks[1].description == "Task 2"
-    assert project.tasks[1].completed is False
-    
-    # Cleanup test file
-    if os.path.exists("tasks.csv"):
-        os.unlink("tasks.csv")
+def test_delete_task_empty_list():
+    """Test deleting task when no tasks exist."""
+    result = project.delete_task(1)
+    assert result is False
 
-def test_load_nonexistent_file(clean_tasks):
+def test_save_and_load_tasks():
+    """Test saving and loading tasks with actual CSV file."""
+    # Backup original CSV if it exists
+    backup_file = None
+    if os.path.exists("tasks.csv"):
+        with open("tasks.csv", "r") as f:
+            backup_content = f.read()
+        backup_file = "tasks_backup.csv"
+        with open(backup_file, "w") as f:
+            f.write(backup_content)
+        os.unlink("tasks.csv")
+    
+    try:
+        # Add test tasks
+        project.add_task("Task 1", "High")
+        project.add_task("Task 2", "Medium")
+        project.tasks[0].mark_complete()
+        
+        # Test save
+        result = project.save_tasks()
+        assert result is True
+        assert os.path.exists("tasks.csv")
+        
+        # Clear tasks and test load
+        project.tasks.clear()
+        result = project.load_tasks()
+        assert result is True
+        assert len(project.tasks) == 2
+        assert project.tasks[0].description == "Task 1"
+        assert project.tasks[0].completed is True
+        assert project.tasks[1].description == "Task 2"
+        assert project.tasks[1].completed is False
+        
+    finally:
+        # Cleanup test file
+        if os.path.exists("tasks.csv"):
+            os.unlink("tasks.csv")
+        
+        # Restore backup if it existed
+        if backup_file and os.path.exists(backup_file):
+            os.rename(backup_file, "tasks.csv")
+
+def test_load_nonexistent_file():
     """Test loading from non-existent file."""
-    import project
+    # Ensure tasks.csv doesn't exist temporarily
+    backup_exists = os.path.exists("tasks.csv")
+    if backup_exists:
+        os.rename("tasks.csv", "tasks_temp_backup.csv")
     
-    # Ensure file doesn't exist
-    if os.path.exists("nonexistent.csv"):
-        os.unlink("nonexistent.csv")
+    try:
+        result = project.load_tasks()
+        assert result is False
+        assert len(project.tasks) == 0
+    finally:
+        # Restore backup if it existed
+        if backup_exists:
+            os.rename("tasks_temp_backup.csv", "tasks.csv")
+            # Reload the original tasks
+            project.load_tasks()
+
+def test_task_str_method():
+    """Test Task string representation."""
+    task1 = Task(1, "Test task", "High", completed=False)
+    task2 = Task(2, "Completed task", "Low", completed=True)
     
-    # Should return False but not crash
-    assert load_tasks() == False
-    assert len(project.tasks) == 0
+    assert "○" in str(task1)  # Pending task
+    assert "✓" in str(task2)  # Completed task
+    assert "Test task" in str(task1)
+    assert "High" in str(task1)
