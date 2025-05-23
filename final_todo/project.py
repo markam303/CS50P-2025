@@ -250,8 +250,11 @@ def main():
             # Mark as complete
             elif choice == 3:
                 view_tasks()
-                task_id = int(input("Enter task ID to mark as completed: "))
-                mark_task_complete(task_id)
+                try:
+                    task_id = int(input("Enter task ID to mark as completed: "))
+                    mark_task_complete(task_id)
+                except ValueError:
+                    print("Please enter a valid number.")
 
             # Delete tasks
             elif choice == 4:
