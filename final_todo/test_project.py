@@ -207,3 +207,12 @@ def test_task_str_method():
     assert "✓" in str(task2)  # Completed task
     assert "Test task" in str(task1)
     assert "High" in str(task1)
+
+
+def test_task_edge_cases():
+    """Test edge cases for description validation."""
+    # Test Unicode characters (should fail)
+    with pytest.raises(ValueError):
+        Task(1, "Café meeting ☕", "High")
+        
+    # Test very long description (should pass)
