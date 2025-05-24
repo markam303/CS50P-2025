@@ -156,9 +156,9 @@ def view_tasks() -> None:
         for task in tasks
     ]
 
-    print("\n" + ("=" * 60))
-    print("\nTodo List")
-    print("=" * 60)
+    print("\n" + ("-" * 60))
+    print("Todo List")
+    print("-" * 60)
     print(
         tabulate(
             table_data,
