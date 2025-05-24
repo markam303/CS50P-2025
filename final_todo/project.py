@@ -13,9 +13,10 @@ class Task:
         """Initialize task properties with validation."""
         # Description validation with regex
         if not description or not description.strip():
-            raise ValueError("Error: missing task description")
+            raise ValueError("Error: Missing task description")
         
-        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
+        if not Task.validate_description:
+            raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
         
 
         if priority not in ["High", "Medium", "Low"]:
@@ -47,9 +48,13 @@ class Task:
             "created": self.created,
             "completed": self.completed,
         }
+    
+    def validate_description(self, description: str) -> bool:
+        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
+        return SAFE_DESCRIPTION_PATTERN.match(description)    
 
     @classmethod
-    def from_dict(cls, task_dict):
+    def from_dict(cls, task_dict: dict):
         """Create Task object from dictionary."""
         # Handle boolean conversion for completed field
         completed = task_dict["completed"]
@@ -67,6 +72,8 @@ class Task:
 
 # Global tasks list
 tasks = []
+
+
 
 
 def add_task(description: str, priority) -> bool:
