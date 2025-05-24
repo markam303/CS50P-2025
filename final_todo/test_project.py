@@ -216,4 +216,6 @@ def test_task_edge_cases():
         Task(1, "Café meeting ☕", "High")
         
     # Test very long description (should pass)
-    assert Task.des
+    long_desc = "A" * 100
+    task = Task(1, long_desc, "High")
+    assert task.description == long_desc
