@@ -15,7 +15,7 @@ class Task:
         if not description or not description.strip():
             raise ValueError("Error: Missing task description")
         # Allow letters, numbers, spaces, punctuation
-        if not self.validate_description:
+        if self.validate_description:
             raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
         
 
