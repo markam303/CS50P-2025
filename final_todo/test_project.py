@@ -168,23 +168,28 @@ def test_delete_task_empty_list():
 
 def test_save_and_load_tasks():
     """Test saving and loading tasks with actual CSV file."""
-    # Add test tasks
-    project.add_task("Task 1", "High")
-    project.add_task("Task 2", "Medium")
+    try:
+        # Add test tasks
+        project.add_task("Task 1", "High")
+        project.add_task("Task 2", "Medium")
 
-    # Test save
-    assert project.save_tasks()
-    assert os.path.exists("tasks.csv")
+        # Test save
+        assert project.save_tasks()
+        assert os.path.exists("tasks.csv")
 
-    # Clear tasks and test load
-    project.tasks.clear()
-    assert project.load_tasks()
-    assert len(project.tasks) == 2
-    assert project.tasks[0].description == "Task 1"
-    assert not project.tasks[0].completed
-    assert project.tasks[1].description == "Task 2"
-    assert not project.tasks[1].completed
-
+        # Clear tasks and test load
+        project.tasks.clear()
+        assert project.load_tasks()
+        assert len(project.tasks) == 2
+        assert project.tasks[0].description == "Task 1"
+        assert not project.tasks[0].completed
+        assert project.tasks[1].description == "Task 2"
+        assert not project.tasks[1].completed
+        
+    finally:
+        # Cleanup test file
+        if os.path.exists("tasks.csv"):
+            os.unlink("tasks.csv")
             
 
 def test_load_nonexistent_file():
