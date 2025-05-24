@@ -206,14 +206,24 @@ def load_tasks() -> bool:
         return False
 
 
+def print_todo_ascii():
+    """Print welcome msg art line by line."""
+    print("d888888b  .d88b.  d8888b.  .d88b.")
+    print("`~~88~~' .8P  Y8. 88  `8D .8P  Y8.")
+    print("   88    88    88 88   88 88    88")
+    print("   88    88    88 88   88 88    88")
+    print("   88    `8b  d8' 88  .8D `8b  d8'")
+    print("   YP     `Y88P'  Y8888D'  `Y88P'")
+
+
 def main():
     """Main application entry point with interactive menu."""
     # Initialize tasks
     load_tasks()
 
     # Welcome message with Figlet possibly
-    welcome = figlet_format("TODO", font="basic").rstrip("\n")
-    print(f"\n{welcome}", end="")
+    print()
+    print_todo_ascii()
 
     while True:
         # Menu

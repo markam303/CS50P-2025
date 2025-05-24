@@ -185,12 +185,12 @@ def test_save_and_load_tasks():
         assert not project.tasks[0].completed
         assert project.tasks[1].description == "Task 2"
         assert not project.tasks[1].completed
-        
+
     finally:
         # Cleanup test file
         if os.path.exists("tasks.csv"):
             os.unlink("tasks.csv")
-            
+
 
 def test_load_nonexistent_file():
     """Test loading from non-existent file."""
