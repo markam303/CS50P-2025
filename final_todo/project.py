@@ -212,8 +212,8 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
-    print()
-    print(figlet_format("TODO", font="basic"), end="")
+    welcome = figlet_format("TODO", font="basic").rstrip("\n")
+    print(f"\n{welcome}")
     print(f"Loaded {len(tasks)} existing tasks")
 
     while True:
