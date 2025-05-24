@@ -10,6 +10,7 @@ class Task:
     """Represents a single task with OOP encapsulation."""
     
     # Class level description pattern for security reasons
+    # Allow letters, numbers, spaces and punctuation
     SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
     
     def __init__(self, task_id: int, description: str, priority: str, created: str=None, completed: bool=False):
@@ -17,9 +18,6 @@ class Task:
         # Description validation with regex
         if not description or not description.strip():
             raise ValueError("Error: Missing task description")
-        
-        # Allow letters, numbers, spaces, 
-        
         if not self._validate_description(description):
             raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
 
