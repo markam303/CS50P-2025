@@ -107,14 +107,14 @@ def mark_task_complete(task_id: int) -> bool:
             if task.completed:
                 print(f"Task {task_id} is already marked as completed.")
                 return False
-            else:
-                task.mark_complete()
-                print(f"Task {task_id} completed!")
-                save_tasks()
-                return True
-            
+            task.mark_complete()
+            print(f"Task {task_id} completed!")
+            save_tasks()
+            return True
+    
     # Return when no tasks was found
-
+    print(f"Error: No task found with ID {task_id}")
+    return False
 
 def delete_task(task_id: int) -> bool:
     """Delete task with ID validation and reindexing."""
