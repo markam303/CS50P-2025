@@ -214,7 +214,7 @@ def main():
     # Welcome message with Figlet possibly
     print("\n")
     welcome = figlet_format("TODO", font="basic")
-    print(welcome, end="")
+    print(welcome)
     print(f"Loaded {len(tasks)} existing tasks")
 
     while True:
