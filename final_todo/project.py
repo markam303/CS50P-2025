@@ -2,7 +2,7 @@ import csv
 import os
 from datetime import datetime
 from tabulate import tabulate
-from pyfiglet import Figlet
+from pyfiglet import Figlet, figlet_format
 
 
 class Task:
@@ -212,7 +212,7 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
-    figle
+    figlet_text = figlet_format("TODO", font="flowerpower")
     print(figlet_text)
     print(f"Loaded {len(tasks)} existing tasks")
 
