@@ -12,7 +12,7 @@ class Task:
     # Class level description pattern for security reasons
     SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
     
-    def __init__(self, task_id, description, priority, created=None, completed=False):
+    def __init__(self, task_id: int, description: str, priority: str, created: str=None, completed: bool=False):
         """Initialize task properties with validation."""
         # Description validation with regex
         if not description or not description.strip():
@@ -36,14 +36,14 @@ class Task:
         status = "✓" if self.completed else "○"
         return f"{status} {self.description} ({self.priority})"
 
-    def mark_complete(self):
+    def mark_complete(self) -> bool:
         """Mark task as completed with validation."""
         if self.completed:
             return False
         self.completed = True
         return True
 
-    def to_dict(self):
+    def to_dict(self) -> dict:
         """Convert to dictionary for CSV serialization."""
         return {
             "id": self.id,
