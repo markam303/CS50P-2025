@@ -212,14 +212,14 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
-
+    f = Figlet(font="")
     print("\n============ Todo List ============")
-
     print(f"Loaded {len(tasks)} existing tasks")
 
     while True:
         # Menu
-        print("\nOptions:")
+        print("\n============ Todo List ============")
+        print("Options:")
         print("1. Add a new task")
         print("2. View all tasks")
         print("3. Mark as completed")
@@ -272,7 +272,7 @@ def main():
             # Exit program
             elif choice == 5:
                 save_tasks()
-                print("Thanks you for using Todo. Goodbye!")
+                print("\nThanks you for using Todo. Goodbye!\n")
                 break
 
             # Wrong choice, try again
