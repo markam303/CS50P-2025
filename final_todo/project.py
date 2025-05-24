@@ -212,7 +212,7 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
-    f = Figlet(font="")
+    f = Figlet(font="flowerpower")
     print("\n============ Todo List ============")
     print(f"Loaded {len(tasks)} existing tasks")
 
