@@ -209,6 +209,23 @@ def test_task_str_method():
     assert "High" in str(task1)
 
 
+def test_security_validation():
+    """Test security validation in Task description."""
+    # Test XSS attempts
+    with pytest.raises(ValueError):
+        Task(1, "<script>alert('xss')</script", "High")
+        
+    # Test SQL injection attempts
+    with pytest.raises(ValueError):
+        Task(1, "'; DROP TABLE tasks; --", "High")
+        
+    # Test valid characters (should pass)
+    task1 = Task(1, "Buy groceries: milk, bread!", "High")
+    assert task1.description == "Buy groceries: milk, bread!"
+    task2 = Task(2, "Meeting at 3:00 PM (Room 303)", "Medium")    
+    assert task2.description == "Meeting at 3:00 PM (Room 303)"
+
+
 def test_task_edge_cases():
     """Test edge cases for description validation."""
     # Test Unicode characters (should fail)
