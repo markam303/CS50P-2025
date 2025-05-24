@@ -8,13 +8,13 @@ from tabulate import tabulate
 
 class Task:
     """Represents a single task with OOP encapsulation."""
-
     def __init__(self, task_id, description, priority, created=None, completed=False):
         """Initialize task properties with validation."""
         # Description validation with regex
         if not description or not description.strip():
             raise ValueError("Error: Missing task description")
-        # Allow letters, numbers, spaces, punctuation
+        # Allow letters, numbers, spaces, 
+        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
         if self.validate_description:
             raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
         
