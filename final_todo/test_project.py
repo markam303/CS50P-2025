@@ -196,20 +196,8 @@ def test_save_and_load_tasks():
 
 def test_load_nonexistent_file():
     """Test loading from non-existent file."""
-    # Ensure tasks.csv doesn't exist temporarily
-    backup_exists = os.path.exists("tasks.csv")
-    if backup_exists:
-        os.rename("tasks.csv", "tasks_temp_backup.csv")
-
-    try:
-        assert project.load_tasks() == False
-        assert len(project.tasks) == 0
-    finally:
-        # Restore backup if it existed
-        if backup_exists:
-            os.rename("tasks_temp_backup.csv", "tasks.csv")
-            # Reload the original tasks
-            project.load_tasks()
+    assert project.load_tasks() == False
+    assert len(project.tasks) == 0
 
 
 def test_task_str_method():
