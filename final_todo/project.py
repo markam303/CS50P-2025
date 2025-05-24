@@ -210,9 +210,9 @@ def main():
     load_tasks()
 
     # Welcome message with Figlet possibly
-    print("\n" + ("=" * 50))
+
     print("===== Todo List =====")
-    print("=" * 50)
+
     print(f"\nLoaded {len(tasks)} existing tasks.")
 
     # Menu
