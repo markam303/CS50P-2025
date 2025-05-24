@@ -11,8 +11,10 @@ class Task:
 
     def __init__(self, task_id, description, priority, created=None, completed=False):
         """Initialize task properties with validation."""
+        # Description validation with regex
         if not description or not description.strip():
             raise ValueError("Error: missing task description")
+        
         
 
         if priority not in ["High", "Medium", "Low"]:
