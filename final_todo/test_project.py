@@ -86,7 +86,7 @@ def test_task_from_dict():
     assert task.id == 2
     assert task.description == "Test task 2"
     assert task.priority == "High"
-    assert task.completed == True
+    assert task.completed
 
 
 def test_add_task():
