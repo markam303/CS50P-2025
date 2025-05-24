@@ -213,12 +213,12 @@ def main():
 
     # Welcome message with Figlet possibly
     welcome = figlet_format("TODO", font="basic").rstrip("\n")
-    print(f"\n{welcome}")
-    print(f"Loaded {len(tasks)} existing tasks")
+    print(f"\n{welcome}", end="")
 
     while True:
         # Menu
         print("\n============ Todo List ============")
+        print(f"Loaded {len(tasks)} existing tasks")
         print("Options:")
         print("1. Add a new task")
         print("2. View all tasks")
