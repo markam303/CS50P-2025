@@ -26,14 +26,14 @@ class Task:
         return f"{status} {self.description} ({self.priority})"
 
     def mark_complete(self):
-        """Mark task as completed with validation"""
+        """Mark task as completed with validation."""
         if self.completed:
             return False
         self.completed = True
         return True
 
     def to_dict(self):
-        """Convert to dictionary for CSV serialization"""
+        """Convert to dictionary for CSV serialization."""
         return {
             "id": self.id,
             "description": self.description,
