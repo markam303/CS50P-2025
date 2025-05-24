@@ -13,7 +13,7 @@ class Task:
             raise ValueError("Error: missing task description")
 
         if priority not in ["High", "Medium", "Low"]:
-            raise ValueError("Invalid priority. Use: High, Medium, Low.")
+            raise ValueError("Error: Invalid priority. Use: High, Medium, Low")
 
         self.id = task_id
         self.description = description.strip()
@@ -105,7 +105,7 @@ def mark_task_complete(task_id: int) -> bool:
     for task in tasks:
         if task.id == task_id:
             if task.completed:
-                print(f"Task {task_id} is already marked as completed.")
+                print(f"Task {task_id} is already marked as completed")
                 return False
             task.mark_complete()
             print(f"Task {task_id} completed!")
@@ -119,7 +119,7 @@ def mark_task_complete(task_id: int) -> bool:
 def delete_task(task_id: int) -> bool:
     """Delete task with ID validation and reindexing."""
     if not tasks:
-        print("No tasks to delete!")
+        print("Error: No tasks to delete")
         return False
 
     for i, task in enumerate(tasks):
@@ -213,7 +213,7 @@ def main():
 
     print("===== Todo List =====")
 
-    print(f"\nLoaded {len(tasks)} existing tasks.")
+    print(f"\nLoaded {len(tasks)} existing tasks")
 
     # Menu
     print("\nOptions:")
@@ -256,7 +256,7 @@ def main():
                     task_id = int(input("Enter task ID to mark as completed: "))
                     mark_task_complete(task_id)
                 except ValueError:
-                    print("Please enter a valid number.")
+                    print("Error: Please enter a valid number")
 
             # Delete tasks
             elif choice == 4:
@@ -265,7 +265,7 @@ def main():
                     task_id = int(input("Enter task ID to delete: "))
                     delete_task(task_id)
                 except ValueError:
-                    print("Error: Please enter a valid number.")
+                    print("Error: Please enter a valid number")
 
             # Exit program
             elif choice == 5:
@@ -275,11 +275,11 @@ def main():
 
             # Wrong choice, try again
             else:
-                print("Invalid choice. Try again.")
+                print("Error: Invalid choice. Try again")
 
         # Catching exceptions
         except ValueError:
-            print("Invalid input. Please enter a number.")
+            print("Error: Invalid input. Please enter a number")
 
 
 if __name__ == "__main__":
