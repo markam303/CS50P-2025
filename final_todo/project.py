@@ -213,7 +213,7 @@ def main():
 
     # Welcome message with Figlet possibly
     print()
-    print(figlet_format("TODO", font="banner4"))
+    print(figlet_format("TODO", font="basic"))
     print(f"Loaded {len(tasks)} existing tasks")
 
     while True:
