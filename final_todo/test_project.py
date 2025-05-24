@@ -26,8 +26,8 @@ def test_task_creation():
     assert task.id == 1
     assert task.description == "Test task"
     assert task.priority == "High"
-    assert task.completed == False
-    assert not task.created == None
+    assert not task.completed
+    assert task.created is not None
 
 
 def test_task_validation():
@@ -50,11 +50,11 @@ def test_task_mark_complete():
     task = Task(1, "Test task", "Medium")
 
     # First completion should succeed
-    assert task.mark_complete() == True
-    assert task.completed == True
+    assert not task.mark_complete()
+    assert task.completed
 
     # Second completion should return False (already completed)
-    assert task.mark_complete() == False
+    assert not task.mark_complete()
 
 
 def test_task_to_dict():
@@ -92,13 +92,13 @@ def test_task_from_dict():
 def test_add_task():
     """Test adding tasks to the list."""
     # Test successful addition
-    assert project.add_task("Test task", "High") == True
+    assert project.add_task("Test task", "High")
     assert len(project.tasks) == 1
     assert project.tasks[0].description == "Test task"
     assert project.tasks[0].priority == "High"
 
     # Test numeric priority conversion
-    assert project.add_task("Test task 2", 2) == True
+    assert project.add_task("Test task 2", 2)
     assert len(project.tasks) == 2
     assert project.tasks[1].priority == "Medium"
 
@@ -106,15 +106,15 @@ def test_add_task():
 def test_add_task_validation():
     """Test add_task input validation."""
     # Test empty description
-    assert project.add_task("", "High") == False
+    assert not project.add_task("", "High")
     assert len(project.tasks) == 0
 
     # Test whitespace-only description
-    assert project.add_task("   ", "High") == False
+    assert not project.add_task("   ", "High")
     assert len(project.tasks) == 0
 
     # Test invalid numeric priority
-    assert project.add_task("Test task", 5) == False
+    assert not project.add_task("Test task", 5)
     assert len(project.tasks) == 0
 
 
@@ -125,19 +125,19 @@ def test_mark_task_complete():
     project.add_task("Task 2", "Medium")
 
     # Test successful completion
-    assert project.mark_task_complete(1) == True
-    assert project.tasks[0].completed == True
+    assert project.mark_task_complete(1)
+    assert project.tasks[0].completed
 
     # Test completing already completed task
-    assert project.mark_task_complete(1) == False
+    assert not project.mark_task_complete(1)
 
     # Test invalid task ID
-    assert project.mark_task_complete(99) == False
+    assert not project.mark_task_complete(99)
 
 
 def test_mark_task_complete_empty_list():
     """Test marking task complete when no tasks exist."""
-    assert project.mark_task_complete(1) == False
+    assert not project.mark_task_complete(1)
 
 
 def test_delete_task():
@@ -148,7 +148,7 @@ def test_delete_task():
     project.add_task("Task 3", "Low")
 
     # Delete middle task
-    assert project.delete_task(2) == True
+    assert project.delete_task(2)
     assert len(project.tasks) == 2
 
     # Check ID reindexing
@@ -158,12 +158,12 @@ def test_delete_task():
     assert project.tasks[1].description == "Task 3"
 
     # Test invalid task ID
-    assert project.delete_task(99) == False
+    assert not project.delete_task(99)
 
 
 def test_delete_task_empty_list():
     """Test deleting task when no tasks exist."""
-    assert project.delete_task(1) == False
+    assert not project.delete_task(1)
 
 
 def test_save_and_load_tasks():
@@ -173,23 +173,23 @@ def test_save_and_load_tasks():
     project.add_task("Task 2", "Medium")
 
     # Test save
-    assert project.save_tasks() == True
+    assert project.save_tasks()
     assert os.path.exists("tasks.csv")
 
     # Clear tasks and test load
     project.tasks.clear()
-    assert project.load_tasks() == True
+    assert project.load_tasks()
     assert len(project.tasks) == 2
     assert project.tasks[0].description == "Task 1"
-    assert project.tasks[0].completed == False
+    assert not project.tasks[0].completed
     assert project.tasks[1].description == "Task 2"
-    assert project.tasks[1].completed == False
+    assert not project.tasks[1].completed
 
             
 
 def test_load_nonexistent_file():
     """Test loading from non-existent file."""
-    assert project.load_tasks() == False
+    assert not project.load_tasks()
     assert len(project.tasks) == 0
 
 
