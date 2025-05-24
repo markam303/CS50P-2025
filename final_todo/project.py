@@ -8,16 +8,20 @@ from tabulate import tabulate
 
 class Task:
     """Represents a single task with OOP encapsulation."""
+    
+    # Class level description pattern for security reasons
+    SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
+    
     def __init__(self, task_id, description, priority, created=None, completed=False):
         """Initialize task properties with validation."""
         # Description validation with regex
         if not description or not description.strip():
             raise ValueError("Error: Missing task description")
-        # Allow letters, numbers, spaces, 
-        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
-        if self.validate_description:
-            raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
         
+        # Allow letters, numbers, spaces, 
+        
+        if not self._validate_description(description):
+            raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
 
         if priority not in ["High", "Medium", "Low"]:
             raise ValueError("Error: Invalid priority. Use: High, Medium, Low")
@@ -50,7 +54,7 @@ class Task:
         }
 
     @classmethod
-    def validate_description(cls, description: str) -> bool:
+    def _validate_description(cls, description: str) -> bool:
         """Validate description for malicious content."""
         return cls.SAFE_DESCRIPTION_PATTERN.match(description)    
 
