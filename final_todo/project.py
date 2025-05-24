@@ -134,7 +134,7 @@ def delete_task(task_id: int) -> bool:
             save_tasks()
             return True
 
-    print(f"No task found with ID {task_id}")
+    print(f"Error: No task found with ID {task_id}")
     return False
 
 
