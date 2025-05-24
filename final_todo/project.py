@@ -2,6 +2,7 @@ import csv
 import os
 from datetime import datetime
 from tabulate import tabulate
+from pyfiglet import Figlet
 
 
 class Task:
@@ -157,7 +158,7 @@ def view_tasks() -> None:
     ]
 
     print("\n" + ("-" * 60))
-    print("Todo List")
+    print((" " * 26) + "Todo List")
     print("-" * 60)
     print(
         tabulate(
