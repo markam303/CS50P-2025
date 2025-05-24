@@ -213,9 +213,9 @@ def main():
 
     # Welcome message with Figlet possibly
 
-    print("===== Todo List =====")
+    print("\n============ Todo List ============")
 
-    print(f"\nLoaded {len(tasks)} existing tasks")
+    print(f"Loaded {len(tasks)} existing tasks")
 
     while True:
         # Menu
