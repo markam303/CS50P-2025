@@ -10,7 +10,7 @@ class Task:
     """Represents a single task with OOP encapsulation."""
     
     # Class level description pattern for security reasons
-    # Allow letters, numbers, spaces and punctuation
+    # Allow letters, numbers, spaces and common punctuation
     SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
     
     def __init__(self, task_id: int, description: str, priority: str, created: str=None, completed: bool=False):
@@ -30,7 +30,7 @@ class Task:
         self.created = created if created else datetime.now().strftime("%Y-%m-%d")
         self.completed = completed
 
-    def __str__(self):
+    def __str__(self) -> str:
         status = "✓" if self.completed else "○"
         return f"{status} {self.description} ({self.priority})"
 
@@ -158,7 +158,7 @@ def delete_task(task_id: int) -> bool:
 def view_tasks() -> None:
     """Display all tasks in formatted table."""
     if not tasks:
-        print("Error: no tasks found")
+        print("Error: No tasks found")
         return
 
     table_data = [
@@ -269,7 +269,7 @@ def main():
                         assert 1 <= priority <= 3
                         break
                     except (ValueError, AssertionError):
-                        print("Invalid priority")
+                        print("Error: Invalid priority")
                 add_task(description, priority)
 
             # View all tasks
