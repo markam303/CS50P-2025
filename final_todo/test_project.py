@@ -126,7 +126,7 @@ def test_mark_task_complete():
 
     # Test successful completion
     assert project.mark_task_complete(1) == True
-    assert project.tasks[1].completed == True
+    assert project.tasks[0].completed == True
 
     # Test completing already completed task
     assert project.mark_task_complete(1) == False
