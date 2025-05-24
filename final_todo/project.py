@@ -81,15 +81,11 @@ tasks = []
 
 def add_task(description: str, priority: str) -> bool:
     """Add new task with input validation."""
-    # Validation
-    # if not description or not description.strip():
-    #    return False
-
     if isinstance(priority, int):
-        priority_map = {1: "High", 2: "Medium", 3: "Low"}
-        if priority not in priority_map:
+        priority_options = {1: "High", 2: "Medium", 3: "Low"}
+        if priority not in priority_options:
             return False
-        priority = priority_map[priority]
+        priority = priority_options[priority]
 
     try:
         # Create new Task obj
