@@ -112,6 +112,8 @@ def mark_task_complete(task_id: int) -> bool:
                 print(f"Task {task_id} completed!")
                 save_tasks()
                 return True
+            
+    # Return when no tasks was found
 
 
 def delete_task(task_id: int) -> bool:
