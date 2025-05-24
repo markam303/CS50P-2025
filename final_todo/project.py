@@ -111,10 +111,11 @@ def mark_task_complete(task_id: int) -> bool:
             print(f"Task {task_id} completed!")
             save_tasks()
             return True
-    
+
     # Return when no tasks was found
     print(f"Error: No task found with ID {task_id}")
     return False
+
 
 def delete_task(task_id: int) -> bool:
     """Delete task with ID validation and reindexing."""
@@ -215,15 +216,15 @@ def main():
 
     print(f"\nLoaded {len(tasks)} existing tasks")
 
-    # Menu
-    print("\nOptions:")
-    print("1. Add a new task")
-    print("2. View all tasks")
-    print("3. Mark as completed")
-    print("4. Delete a task")
-    print("5. Save & Exit")
-
     while True:
+        # Menu
+        print("\nOptions:")
+        print("1. Add a new task")
+        print("2. View all tasks")
+        print("3. Mark as completed")
+        print("4. Delete a task")
+        print("5. Save & Exit")
+
         # User's choice
         try:
             choice = int(input("\nWhat do you want to do? Enter choice (1-5): "))
