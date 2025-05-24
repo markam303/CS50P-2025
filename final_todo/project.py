@@ -51,8 +51,8 @@ class Task:
 
     @classmethod
     def validate_description(cls, description: str) -> bool:
-        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
-        return SAFE_DESCRIPTION_PATTERN.match(description)    
+        """Validate description for malicious content."""
+        return cls.SAFE_DESCRIPTION_PATTERN.match(description)    
 
     @classmethod
     def from_dict(cls, task_dict: dict):
