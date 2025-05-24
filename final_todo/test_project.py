@@ -213,7 +213,7 @@ def test_security_validation():
     """Test security validation in Task description."""
     # Test XSS attempts
     with pytest.raises(ValueError):
-        Task(1, "<script>alert('xss')</script", "High")
+        Task(1, "<script>alert('xss')</script>", "High")
         
     # Test SQL injection attempts
     with pytest.raises(ValueError):
