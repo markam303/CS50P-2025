@@ -15,6 +15,7 @@ class Task:
         if not description or not description.strip():
             raise ValueError("Error: missing task description")
         
+        SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
         
 
         if priority not in ["High", "Medium", "Low"]:
