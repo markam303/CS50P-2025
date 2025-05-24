@@ -57,7 +57,7 @@ class Task:
         return cls.SAFE_DESCRIPTION_PATTERN.match(description)    
 
     @classmethod
-    def from_dict(cls, task_dict: dict):
+    def from_dict(cls, task_dict: dict) -> "Task":
         """Create Task object from dictionary."""
         # Handle boolean conversion for completed field
         completed = task_dict["completed"]
@@ -79,7 +79,7 @@ tasks = []
 
 
 
-def add_task(description: str, priority) -> bool:
+def add_task(description: str, priority: str) -> bool:
     """Add new task with input validation."""
     # Validation
     # if not description or not description.strip():
