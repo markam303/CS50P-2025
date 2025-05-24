@@ -50,7 +50,7 @@ def test_task_mark_complete():
     task = Task(1, "Test task", "Medium")
 
     # First completion should succeed
-    assert not task.mark_complete()
+    assert task.mark_complete()
     assert task.completed
 
     # Second completion should return False (already completed)
