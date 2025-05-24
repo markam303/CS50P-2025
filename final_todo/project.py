@@ -261,8 +261,11 @@ def main():
             # Delete tasks
             elif choice == 4:
                 view_tasks()
-                task_id = int(input("Enter task ID to delete: "))
-                delete_task(task_id)
+                try:
+                    task_id = int(input("Enter task ID to delete: "))
+                    delete_task(task_id)
+                except ValueError:
+                    print("Error: Please enter a valid number.")
 
             # Exit program
             elif choice == 5:
