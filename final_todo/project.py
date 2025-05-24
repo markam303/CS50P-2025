@@ -14,7 +14,7 @@ class Task:
         # Description validation with regex
         if not description or not description.strip():
             raise ValueError("Error: Missing task description")
-        
+        # Allow letters, numbers, spaces, punctuation
         if not Task.validate_description:
             raise ValueError("Error: Allowed characters are letters, numbers, spaces and punctuation")
         
@@ -48,8 +48,9 @@ class Task:
             "created": self.created,
             "completed": self.completed,
         }
-    
-    def validate_description(self, description: str) -> bool:
+
+    @classmethod
+    def validate_description(cls, description: str) -> bool:
         SAFE_DESCRIPTION_PATTERN = re.compile(r'^[a-zA-Z0-9\s.,!?:()\-+]+$')
         return SAFE_DESCRIPTION_PATTERN.match(description)    
 
