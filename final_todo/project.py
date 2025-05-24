@@ -1,8 +1,9 @@
 import csv
 import os
+import re
 from datetime import datetime
 from tabulate import tabulate
-from pyfiglet import Figlet, figlet_format
+
 
 
 class Task:
@@ -12,6 +13,7 @@ class Task:
         """Initialize task properties with validation."""
         if not description or not description.strip():
             raise ValueError("Error: missing task description")
+        
 
         if priority not in ["High", "Medium", "Low"]:
             raise ValueError("Error: Invalid priority. Use: High, Medium, Low")
